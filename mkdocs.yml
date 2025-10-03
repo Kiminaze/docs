@@ -23,12 +23,39 @@ theme:
     - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.path
+    - navigation.footer
 
 nav:
   - Home: index.md
   - Common Issues: common-issues/
   - Scripts: scripts/
   - Free Scripts: free-scripts/
+
+not_in_nav: |
+  /imprint.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Kiminaze
+    - icon: fontawesome/brands/discord
+      link: https://discord.kiminaze.de
+    - icon: fontawesome/brands/youtube
+      link: https://yt.kiminaze.de
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    actions:
+      - accept
+      - manage
+      - reject
+
+copyright: >
+  Copyright &copy; 2025 Philipp Decker - <a href="#__consent">Change cookie settings</a> - <a href="/docs/imprint/">Imprint</a>
 
 markdown_extensions:
   - toc:
