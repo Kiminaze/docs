@@ -18,9 +18,17 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.path
 
 nav:
   - Home: index.md
+  - Common Issues: common-issues/
+  - Scripts: scripts/
+  - Free Scripts: free-scripts/
 
 markdown_extensions:
   - toc:
@@ -32,3 +40,4 @@ markdown_extensions:
 
 plugins:
   - search
+  - awesome-nav

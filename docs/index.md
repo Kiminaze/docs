@@ -1,17 +1,12 @@
-# Welcome to MkDocs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# Welcome!
 
-## Commands
+Here you can find the documentation of all my resources including installation instructions and 
+detailed descriptions on how to use and integrate all the different features like exports and 
+events!
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Social links:
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+* [FiveM profile](https://fivem.kiminaze.de/)
+* [Github profile](https://git.kiminaze.de/)
+* [Tebex store](https://tbx.kiminaze.de/)
