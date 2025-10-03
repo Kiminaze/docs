@@ -18,6 +18,7 @@ jobs:
         with:
           python-version: '3.x'
       - run: pip install mkdocs mkdocs-material
+      - run: pip install mkdocs-awesome-nav
       - run: mkdocs build --site-dir site
       - uses: actions/upload-pages-artifact@v3
         with:
