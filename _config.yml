@@ -1,7 +1,0 @@
-
-title: KSG Docs
-description: Documentation for all things KSG!
-theme:
-  name: null
-  custom_dir: overrides
-  remote_theme: squidfunk/mkdocs-material
