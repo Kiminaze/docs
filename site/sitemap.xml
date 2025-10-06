@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://kiminaze.github.io/docs/</loc>
-         <lastmod>2025-10-03</lastmod>
+         <lastmod>2025-10-04</lastmod>
     </url>
     <url>
-         <loc>https://kiminaze.github.io/docs/common-issues/</loc>
-         <lastmod>2025-10-03</lastmod>
+         <loc>https://kiminaze.github.io/docs/imprint/</loc>
+         <lastmod>2025-10-04</lastmod>
     </url>
     <url>
          <loc>https://kiminaze.github.io/docs/common-issues/portal/</loc>
-         <lastmod>2025-10-03</lastmod>
+         <lastmod>2025-10-04</lastmod>
     </url>
     <url>
          <loc>https://kiminaze.github.io/docs/common-issues/updating-resources/</loc>
-         <lastmod>2025-10-03</lastmod>
+         <lastmod>2025-10-04</lastmod>
     </url>
     <url>
          <loc>https://kiminaze.github.io/docs/free-scripts/</loc>
-         <lastmod>2025-10-03</lastmod>
+         <lastmod>2025-10-04</lastmod>
     </url>
     <url>
          <loc>https://kiminaze.github.io/docs/scripts/</loc>
-         <lastmod>2025-10-03</lastmod>
+         <lastmod>2025-10-04</lastmod>
+    </url>
+    <url>
+         <loc>https://kiminaze.github.io/docs/scripts/AdvancedParking/</loc>
+         <lastmod>2025-10-04</lastmod>
     </url>
 </urlset>

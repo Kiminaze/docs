@@ -5,10 +5,9 @@ Our resources always come with a version checker that will notify you in your se
 there has been an update. It also contains information like patch notes, so make sure to read them 
 even if they seem unimportant at first.
 
-{% hint style="info" %}
-The keymaster site also shows you updates to resources that you have not yet downloaded with a 
-<mark style="background-color:blue;">NEW</mark>-badge next to them.
-{% endhint %}
+!!! info "New Updates"
+    The keymaster site also shows you updates to resources that you have not yet downloaded with a 
+    <mark style="background-color:blue;">NEW</mark>-badge next to them.
 
 ## How to update properly
 
@@ -19,9 +18,8 @@ to first backup your old version and then drag over the new version.
 If you are simply overwriting existing files, remember that you might at least want to keep your 
 config if you changed anything from the default values.
 
-{% hint style="info" %}
-Updates that change anything in the config will mention this in the patch notes!
-{% endhint %}
+!!! info "Config changes"
+    Updates that change anything in the config will mention this in the patch notes!
 
 ***
 

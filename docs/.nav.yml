@@ -1,0 +1,9 @@
+
+nav:
+  - index.md
+  - common-issues
+  - scripts
+  - free-scripts
+
+not_in_nav: |
+  /imprint.md
