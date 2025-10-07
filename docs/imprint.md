@@ -1,11 +1,20 @@
 
-# Imprint
+---
+title: Imprint - Services - Privacy Policy
+---
 
-Philipp Decker - Videogame and Software Development ("we", "us", "our") is a small business 
-operating from Germany. We primarily focus on the development of resources for "FiveM", a 
-modification for "Grand Theft Auto V" by Cfx.re.
+## 1. Imprint
 
-Owner and person responsible for the domain https://kiminaze.de, its subdomains and content is:
+Philipp Decker - Videogame and Software Development (referred to as "we", "us", "our" below) is a 
+small business operating from Germany. We primarily focus on the development of resources for 
+"FiveM" by [Cfx.re](https://cfx.re/), a modification for "Grand Theft Auto V" by 
+[Rockstar Games](https://www.rockstargames.com/).
+
+**Disclaimer:** [kiminaze.de](https://kiminaze.de), its subdomains and its content is not approved, 
+sponsored, or endorsed by Rockstar Games.
+
+Owner and person responsible for the domain [kiminaze.de](https://kiminaze.de), its subdomains and 
+content is:
 
 Philipp Decker
 
@@ -16,149 +25,159 @@ Germany
 E-Mail: kiminaze@yahoo.de
 
 
-# Services
+## 2. Services
 
-## Documentation
+### 2.1. Documentation
 
-We provide a comprehensive documentation focused on technical documentation and guidance related to 
-our FiveM resources. Usage of this service is free for the end user.
+We provide comprehensive technical documentation and guidance for our FiveM resources.
 
-The documentation is located at https://docs.kiminaze.de.
+This service is free of charge for all users.
 
-## Discord Server and Bot
+The documentation is available at [https://docs.kiminaze.de](https://docs.kiminaze.de).
 
-We provide a Discord server for community interaction, support and official announcements. As part 
-of this server we also provide a Discord Bot for seemless integration into the support process. 
-Usage of this service is free for the end user.
+### 2.2. Discord Server and Bot
 
-The server can be accessed at https://discord.kiminaze.de
+We operate a Discord server to facilitate community interaction, technical support and official 
+announcements.
 
-## Resource Telemetry Data
+A dedicated Discord Bot is also provided to ensure seamless integration with the 
+support process.
 
-We provide a service on our backend that allows sharing of our resource's telemetry data with us. 
-It is collected for debugging issues, providing technical support and improving the stability and 
-reliability of our resources. Usage of this service is free for the end user.
+Use of this service is free of charge.
 
-This service is provided only in selected resources provided by us and defaults to opt-in unless 
-the end user is using an experimental version where it defaults to opt-out.
+The server can be accessed at [https://discord.kiminaze.de](https://discord.kiminaze.de).
 
+### 2.3. Resource Telemetry Data
 
-# Privacy Policy
+We provide an optional telemetry service that allows our resources to share diagnostic data with 
+us. This data helps with debugging, technical support, and improving the stability and reliability 
+of our resources.
 
-## Documentation
+Use of this service is free of charge.
 
-While our documentation itself does not gather any user data, we do make use of cookies for certain 
-functions on the website.
-
-We use YouTube to embed videos as showcase or visualisation of certain parts of the documentation. 
-This cookie needs to be accepted in order to directly view these videos on the website itself. 
-Otherwise only links to the video will be provided.
+Telemetry is available only in selected resources. It is **opt-in by default**, except in 
+experimental versions where it defaults to **opt-out**.
 
 
-## Discord Server and Bot
+## 3. Privacy Policy
 
-### When is information collected?
+### 3.1. GDPR Responsibility
 
-Our Bot only collects information with prior consent by the user. All other related processes only 
-process and then discard the user id of the user.
+**Controller:** Philipp Decker - Videogame and Software Development (German small business)
 
-Consent is required for claiming roles that are tied to resources purchased from our store. The 
-user is giving consent by pressing a button that is clearly labeled with the condition it is tied 
-to.
+Email: kiminaze@yahoo.de
 
-### What information is collected?
+### 3.2. Data Deletion
+
+To request deletion of your data, please contact support via 
+[our Discord server](https://discord.kiminaze.de).
+
+Requests are processed as soon as possible.
+
+Please note that deletion may result in temporary loss of access to certain services until consent 
+is provided again.
+
+### 3.3. Documentation and Embedded Content
+
+Our documentation does not directly collect personal data. However, cookies are used to enable 
+specific website features.
+
+Embedded videos are provided through **YouTube** for demonstration and visualization purposes. When 
+viewing these videos, YouTube may collect data in accordance with its 
+[Privacy Policy](https://policies.google.com/privacy?hl=en#footnote-data-controller). If cookies 
+are declined, only external links to the videos will be available instead of embedded playback.
+
+
+### 3.4. Discord Server and Bot
+
+#### 3.4.1. Data Collection
+
+Our Bot only collects information with prior consent by the user. All other processes only handle 
+and then discard the user's identifier.
+
+Consent is required to claim roles linked to purchases from our store. Users provide consent by 
+pressing a clearly labeled button indicating the condition it is tied to.
+
+#### 3.4.2. Data Collected
 
 - Cfx.re identifier of the user
 - Discord identifier of the user
 
-### Why are identifiers collected?
+#### 3.4.3. Purpose of Collection
 
-The Cfx.re and Discord id of the user is required for prove of purchase before receiving support 
-for resources acquired through our store and for future confirmations.
+The identifiers are used to verify purchases before support is provided for resources acquired 
+through our store and for future confirmation purposes.
 
-### Who has access to the identifiers and how are they protected?
+#### 3.4.4. Access and Protection
 
-Access to the identifiers is strictly limited to us and for the use with the Bot and they are 
-stored securely on our server.
+Access to the identifiers is strictly limited to us and their use within the Bot. They are securely 
+stored on our server and are not shared with third parties.
 
-Identifiers are not shared with third parties.
+#### 3.4.5. Data Retention
 
-### How long are the identifiers stored?
-
-Identifiers are stored for an indefinite amount of time.
+Identifiers are retained indefinitely or until the user requests deletion of their data.
 
 
-## Resource Telemetry Data
+### 3.5. Resource Telemetry Data
 
-### When is information collected?
+#### 3.5.1. Data Collection
 
 Telemetry data ("data") is collected **only** when telemetry is **enabled** by the customer via a 
-provided convar. Telemetry can be enabled or disabled at any time at the customer's discretion. 
-Telemetry is disabled by default and opt-in unless the end user is using an experimental version 
-where it defaults to opt-out.
+provided configuration variable ("convar").
+Telemetry can be enabled or disabled at any time at the customer's discretion. It is disabled by 
+default and opt-in, unless the end user is running an experimental version where it defaults to 
+opt-out.
 
-Once enabled, data is sent in the following situations:
-- Defined number of log entries is reached,
-- The resource is stopped,
-- Server is about to be shut down,
-- Script error has occured,
-- Client disconnects from the server.
+Once enabled, data is transmitted under the following conditions:
 
-### What information is collected?
+- A defined number of log entries is reached,
+- The respective resource is stopped,
+- The server is shutting down,
+- A script error has occured,
+- A client disconnects from the server.
+
+#### 3.5.2. Data Collected
 
 - Cfx.re (FiveM) identifier of the server owner
-- Server build version
-- Gamebuild version
-- Version of this resource
+- FiveM server build version
+- FiveM game build version
+- Resource version
 - Timestamps of log entries
-- Client logs produced by this resource
-- Server logs produced by this resource
-- Script errors generated by this resource
+- Client logs generated by the resource
+- Server logs generated by the resource
+- Script error reports
 
-**Note:** No personal data such as names or IP addresses is collected apart from the aforementioned 
-Cfx.re identifier.
+**Note:** No personal data such as names or IP addresses is collected, apart from the 
+aforementioned Cfx.re identifier.
 
-### Why is information collected?
+#### 3.5.3. Purpose of Collection
 
-Data is collected for the following purposes:
-- Debugging issues related to this resource
-- Providing technical support and troubleshooting
-- Improving the stability and reliability of this resource
+Data is collected to:
 
-### Who has access to the data and how is it protected?
+- Diagnose and debug issues
+- Provide technical support and troubleshooting
+- Improve the stability and reliability of the resource
 
-Data is transmitted via secure HTTPS requests and access to the data is strictly limited to the 
-copyright owner (Philipp Decker) and authorized support staff.
+#### 3.5.4. Access and Protection
 
-### Is data shared with third parties?
+Data is transmitted via secure HTTPS.
 
-Data is generally not shared with third parties. In support situations, data may be used to 
-visualize problems to the customer (and their developer) and support tickets are generally visible 
-to everyone who has access to this resource's section in 
+Access to the data is strictly limited to the copyright owner (Philipp Decker) and authorized 
+support staff.
+
+#### 3.5.5. Third-Party Access
+
+Data is generally not shared with third parties.
+
+In support cases, data may be used to illustrate issues to the customer or their developer.
+
+Support tickets are visible to only those with access to the corresponding resource section on 
 [our Discord server](https://discord.kiminaze.de).
 
-### How long is data stored?
+#### 3.5.6. Data Retention
 
-Collected data is stored for **a maximum of 8 days**, after which it is automatically and 
-permanently erased. Should the server owner disable the telemetry, collected data will be erased 
-after **a maximum of 8 days**.
+Collected data is retained for **a maximum of 8 days**, after which it is automatically and 
+permanently deleted.
 
-
-## How can I get my data deleted?
-
-To request immediate deletion of your data, please contact support in 
-[our Discord server](https://discord.kiminaze.de). Deletion requests are processed as soon as 
-possible. Keep in mind that this could mean losing access to the respective service until consent 
-is given again.
-
-## Who is responsible for GDPR compliance?
-
-Philipp Decker - Videogame and Software Development (German small business)
-
-Email: kiminaze@yahoo.de
-
-
-# Disclaimer
-
-https://kiminaze.de, its subdomains and its content is not approved, sponsored, or endorsed by 
-Rockstar Games.
+If telemetry is disabled, previously collected data is alsoe erased within **a maximum of 8 days** 
+or until the user requests deletion of their data.

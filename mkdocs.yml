@@ -46,7 +46,6 @@ extra:
       make our documentation better.
     actions:
       - accept
-      - manage
       - reject
     cookies:
       youtube:
