@@ -21,9 +21,6 @@ theme:
         icon: material/brightness-4
         name: Dark mode
   features:
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.instant.progress
     - navigation.path
     - navigation.footer
     - navigation.sections
