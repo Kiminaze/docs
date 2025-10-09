@@ -6,12 +6,12 @@ there has been an update. It also contains information like patch notes, so make
 even if they seem unimportant at first.
 
 !!! info "New Updates"
-    The keymaster site also shows you updates to resources that you have not yet downloaded with a 
-    <mark style="background-color:blue;">NEW</mark>-badge next to them.
+    The portal also shows updates to resources that you have not yet downloaded with a 
+    <font style="color:green;">:material-reload:</font>-badge next to them.
 
 ## How to update properly
 
-Most updates are simply drag'n'drop jobs and don't really require any attention by you. However 
+Most updates are simply drag'n'drop and don't really require any attention by you. However 
 keep in mind that simply overwriting files could potentially cause issues! It is always recommended 
 to first backup your old version and then drag over the new version.
 
@@ -30,7 +30,8 @@ This is called "semantic versioning". Just by looking at version numbers you can
 see what happened in the last update.
 
 In my resources the first number denotes the **major** version, the second number is the **patch** 
-(or minor) version and the third number usually is reserved for **fixes**.\
+(or minor) version and the third number usually is reserved for **fixes**.
+
 `major.patch.fix`
 
 * Major version changes usually denote really big changes to a resource that might also be breaking 
