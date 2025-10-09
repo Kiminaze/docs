@@ -1,7 +1,7 @@
 
----
-title: Imprint - Services - Privacy Policy
----
+# Imprint - Services - Privacy Policy
+
+Latest revision: 2025/10/09
 
 ## 1. Imprint
 
@@ -24,6 +24,7 @@ Germany
 
 E-Mail: kiminaze@yahoo.de
 
+***
 
 ## 2. Services
 
@@ -58,6 +59,7 @@ Use of this service is free of charge.
 Telemetry is available only in selected resources. It is **opt-in by default**, except in 
 experimental versions where it defaults to **opt-out**.
 
+***
 
 ## 3. Privacy Policy
 
@@ -87,6 +89,7 @@ viewing these videos, YouTube may collect data in accordance with its
 [Privacy Policy](https://policies.google.com/privacy?hl=en#footnote-data-controller). If cookies 
 are declined, only external links to the videos will be available instead of embedded playback.
 
+***
 
 ### 3.4. Discord Server and Bot
 
@@ -117,6 +120,7 @@ stored on our server and are not shared with third parties.
 
 Identifiers are retained indefinitely or until the user requests deletion of their data.
 
+***
 
 ### 3.5. Resource Telemetry Data
 
