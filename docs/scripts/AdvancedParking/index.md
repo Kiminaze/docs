@@ -17,7 +17,7 @@ All vehicle modifications and statuses are saved and will be reapplied upon resp
 
 Vehicles that have been saved are completely dynamic. They can still be moved around and damaged and they'll have their values updated accordingly without a player having to enter the vehicle again.
 
-<div id="youtube-placeholder" data-videoid="_escgRkeOJc"></div>
+<div class="youtube-placeholder" data-videotitle="AdvancedParking Showcase" data-videoid="_escgRkeOJc"></div>
 
 ## Features
 

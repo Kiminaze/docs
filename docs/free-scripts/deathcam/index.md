@@ -1,9 +1,7 @@
 ﻿
 # 💀 DeathCam
 
-{% embed url="https://www.youtube.com/watch?v=JWjFCWXJ9zs" %}
-DeathCam Showcase Video
-{% endembed %}
+<div class="youtube-placeholder" data-videoid="JWjFCWXJ9zs" data-videotitle="DeathCam Showcase"></div>
 
 ## \[DEPRECATED]
 

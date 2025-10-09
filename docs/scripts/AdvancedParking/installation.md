@@ -50,6 +50,6 @@ There might be some scripts out there where this will _not_ work. If you find yo
 
 ### Installation Videos
 
-{% embed url="https://www.youtube.com/watch?v=1IPgzh8Y6P0" %}
+<div class="youtube-placeholder" data-videotitle="AdvancedParking Installation English" data-videoid="1IPgzh8Y6P0"></div>
 
-{% embed url="https://www.youtube.com/watch?v=HMNh9aUPn_8" %}
+<div class="youtube-placeholder" data-videotitle="AdvancedParking Installation Deutsch" data-videoid="HMNh9aUPn_8"></div>
