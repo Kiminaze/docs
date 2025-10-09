@@ -6,6 +6,7 @@ site_author: "Kiminaze"
 
 theme:
   name: material
+  custom_dir: overrides/
   palette:
     - scheme: slate
       primary: deep purple
@@ -27,7 +28,6 @@ theme:
     - navigation.footer
     - navigation.sections
     - navigation.indexes
-  custom_dir: overrides
 
 extra:
   social:
@@ -62,6 +62,9 @@ validation:
 extra_javascript:
   - javascripts/yt_replace.js
 
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
   - toc:
       permalink: '#'
@@ -70,6 +73,14 @@ markdown_extensions:
   - codehilite
   - footnotes
   - meta
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
 
 plugins:
   - search
