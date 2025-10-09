@@ -37,16 +37,14 @@ extra:
   consent:
     title: Cookie consent
     description: >- 
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
+      We use cookies for displaying YouTube videos. With your consent, you're allowing us to embed these videos directly.<br>
+      <a href="/docs/imprint/#3-privacy-policy">Our Privacy Policy</a>
     actions:
       - accept
       - reject
     cookies:
       youtube:
-        name: YouTube
+        name: YouTube - <a href="https://policies.google.com/privacy?hl=en#footnote-data-controller" target="_blank">Privacy Policy</a>
         checked: true
 
 copyright: >
