@@ -4,18 +4,21 @@ description: Persistent and dynamic vehicles even across server restarts!
 
 # 🚙 AdvancedParking
 
-## Links
-
-* :shopping\_cart: [**Buy on Tebex**](https://kiminazes-script-gems.tebex.io/package/4287488)
-* [Forum topic](https://forum.cfx.re/t/advancedparking-v3-11-0-persistent-vehicles-esx-qb-standalone/2099582)
+<div class="grid cards" markdown>
+- <center><span style="font-size: 32px;">[:shopping_cart: **Buy on Tebex**](https://kiminazes-script-gems.tebex.io/package/4287488)</span></center>
+- <center><span style="font-size: 32px;">[:custom-icons8-fivem: Forum topic](https://forum.cfx.re/t/advancedparking-v3-11-0-persistent-vehicles-esx-qb-standalone/2099582)</span></center>
+</div>
 
 ## Description
 
-It allows you to dynamically save any vehicle a player has interacted with and will then respawn the vehicles if they despawned for whatever reason.
+AdvancedParking allows you to dynamically save any vehicle a player has interacted with and will 
+attempt to respawn the vehicles if they vanished for whatever reason.
 
 All vehicle modifications and statuses are saved and will be reapplied upon respawning.
 
-Vehicles that have been saved are completely dynamic. They can still be moved around and damaged and they'll have their values updated accordingly without a player having to enter the vehicle again.
+Vehicles that have been saved are completely dynamic. They can still be moved around and damaged 
+and they'll have their values updated accordingly without a player having to enter the vehicle 
+again.
 
 <div class="youtube-placeholder" data-videotitle="AdvancedParking Showcase" data-videoid="_escgRkeOJc"></div>
 
