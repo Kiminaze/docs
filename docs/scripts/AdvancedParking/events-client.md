@@ -5,7 +5,7 @@
 
 Triggered when a vehicle has been spawned by AdvancedParking.
 
-<mark style="color:red;">**Parameters:**</mark>\
+<font style="color:red;">**Parameters:**</font><br>
 **vehicle** - `int` - The vehicle's handle.
 
 ```lua

@@ -7,34 +7,34 @@ description: Frequently Asked Questions
 
 ## Changing license plate text
 
-There are some minor problems when updating a vehicle's plate. In order to fix those, you will need to **exchange** the function `SetVehicleNumberPlateText` with the following function:
+There are some minor problems when updating a vehicle's plate. In order to fix those, you will need 
+to **exchange** the function `SetVehicleNumberPlateText` with the following function:
 
 ```lua
 exports["AdvancedParking"]:UpdatePlate
 ```
 
-The variables in the parenthesis at the end should stay the same! Do not remove them!\
-Example:
+The variables in the parenthesis at the end should stay the same! Do not remove them!
 
-{% code fullWidth="false" %}
-```lua
+```lua title="Example"
 SetVehicleNumberPlateText(vehicle, "TEST1234")
 -- into this:
 exports["AdvancedParking"]:UpdatePlate(vehicle, "TEST1234")
 ```
-{% endcode %}
 
 ***
 
 ## qb-vehiclekeys
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
-qb-vehiclekeys doesn't properly recognize owned vehicles after a server restart. You cannot (un)lock them.
+qb-vehiclekeys doesn't properly recognize owned vehicles after a server restart. You cannot 
+(un)lock them.
 
-<mark style="color:green;">**Solution**</mark>
+<font style="color:green;">**Solution**</font>
 
-Add the following snippet at the bottom of your `qb-vehiclekeys/server/main.lua` and restart your server.
+Add the following snippet at the bottom of your `qb-vehiclekeys/server/main.lua` and restart your 
+server.
 
 ```lua
 RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
@@ -57,11 +57,12 @@ end)
 
 ## okokGarage keys
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
-Same as `qb-vehiclekeys`. It doesn't properly recognize owned vehicles after a server restart. You cannot (un)lock them.
+Same as `qb-vehiclekeys`. It doesn't properly recognize owned vehicles after a server restart. You 
+cannot (un)lock them.
 
-<mark style="color:green;">**Solution (for ESX)**</mark>
+<font style="color:green;">**Solution (for ESX)**</font>
 
 Add the following snippet at the bottom of the `sv_utils.lua` inside `okokGarage`.
 
@@ -88,7 +89,7 @@ AddEventHandler('esx:onPlayerSpawn', function()
 end)
 ```
 
-<mark style="color:green;">**Solution (for QB)**</mark>
+<font style="color:green;">**Solution (for QB)**</font>
 
 Add the following snippet at the bottom of the `sv_utils.lua` inside `okokGarage`.
 
@@ -119,15 +120,17 @@ end)
 
 ## okokGarage outside vehicle detection
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
-After a server restart vehicles that are still outside will be shown as parked and can be gotten out of a garage multiple times.
+After a server restart vehicles that are still outside will be shown as parked and can be gotten 
+out of a garage multiple times.
 
-<mark style="color:green;">**Solution**</mark>
+<font style="color:green;">**Solution**</font>
 
 Make sure to disable okokGarage's config option called: `Config.SetVehicleImpoundAfter`
 
-Then find the function `takeOutVehicle` inside okokGarage's sv\_utils.lua and add the following code as the first line:
+Then find the function `takeOutVehicle` inside okokGarage's sv\_utils.lua and add the following 
+code as the first line:
 
 ```lua
 if (exports["AdvancedParking"]:GetVehiclePosition(vehicle_plate)) then
@@ -137,7 +140,6 @@ end
 ```
 
 <details>
-
 <summary>Should look like this:</summary>
 
 ```lua
@@ -152,13 +154,15 @@ function takeOutVehicle(db, _source, vehicle_plate, vehicle_id, index, vehicle_n
 
 ***
 
-## cd\_garage DeleteVehicle
+## cd_garage DeleteVehicle
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
-`cd_garage` uses a weird function to delete vehicles. Because of that, the [usual fix](https://docs.kiminaze.de/scripts/advancedparking/installation#deleting-vehicles) will not work for this script.
+`cd_garage` uses a weird function to delete vehicles. Because of that, the 
+[usual fix](https://docs.kiminaze.de/scripts/advancedparking/installation#deleting-vehicles) will 
+not work for this script.
 
-<mark style="color:green;">**Solution**</mark>
+<font style="color:green;">**Solution**</font>
 
 Make sure to disable cd\_garage's built-in persistence feature in their config.
 
@@ -177,7 +181,8 @@ function LeftVehicle(vehicle)
 
 </details>
 
-Find the function `CD_DeleteVehicle` inside `cd_garage/client/functions.lua` and add the following code right after the first line:
+Find the function `CD_DeleteVehicle` inside `cd_garage/client/functions.lua` and add the following 
+code right after the first line:
 
 ```lua
 if (GetResourceState("AdvancedParking") == "started") then
@@ -187,7 +192,6 @@ end
 ```
 
 <details>
-
 <summary>Should look like this:</summary>
 
 ```lua
@@ -222,25 +226,24 @@ end
 
 </details>
 
-
-
 ***
 
 ## JG Advanced Garages
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
 When enabling `Cleanup.storeVehicles` vehicles won't be stored properly.
 
-<mark style="color:green;">**Solution**</mark>
+<font style="color:green;">**Solution**</font>
 
-Add the missing columns to the query inside `AdvancedParking/server/storage/oxmysql.lua` and change `"YOUR_GARAGE_NAME"` to the name of the garage.
+Add the missing columns to the query inside `AdvancedParking/server/storage/oxmysql.lua` and change 
+`"YOUR_GARAGE_NAME"` to the name of the garage.
 
 You can simply replace `Storage.StoreVehicleInGarage` with the following:
 
 ```lua
 Storage.StoreVehicleInGarage = function(params)
-    params = { params[1], params[2], "Legion Square" }
+    params = { "Legion Square", params[1], params[2] }
     oxmysql:update(([[
         UPDATE `%s` SET `%s` = 1, `in_garage` = 1, `garage_id` = ?
             WHERE `plate` = ? OR `plate` = ?;
@@ -248,19 +251,20 @@ Storage.StoreVehicleInGarage = function(params)
 end
 ```
 
-
-
 ***
 
 ## JG Garage + qb-vehiclekeys
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
-When using `qb-vehiclekeys` in tandem with JG's garage, players will lose their keys to job-owned vehicles after a server restart.
+When using `qb-vehiclekeys` in tandem with JG's garage, players will lose their keys to job-owned 
+vehicles after a server restart.
 
-<mark style="color:green;">**Solution**</mark>
+<font style="color:green;">**Solution**</font>
 
-A slightly different version of [this fix](https://docs.kiminaze.de/scripts/advancedparking/faq#qb-vehiclekeys). This should be added at the bottom of `qb-vehiclekeys/server/main.lua`:
+A slightly different version of 
+[this fix](https://docs.kiminaze.de/scripts/advancedparking/faq#qb-vehiclekeys). This should be 
+added at the bottom of `qb-vehiclekeys/server/main.lua`:
 
 ```lua
 RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
@@ -284,19 +288,20 @@ RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
 end)
 ```
 
-
-
 ***
 
 ## GG Garage Job
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
-It uses a specific function to delete vehicles. Because of that, the [usual fix](https://docs.kiminaze.de/scripts/advancedparking/installation#deleting-vehicles) will not work for this script.
+It uses a specific function to delete vehicles. Because of that, the 
+[usual fix](https://docs.kiminaze.de/scripts/advancedparking/installation#deleting-vehicles) will 
+not work for this script.
 
-<mark style="color:green;">**Solution**</mark>
+<font style="color:green;">**Solution**</font>
 
-Find the function `gg.vehicleManager.removeVehicle` inside its files and add the following code right after the first line:
+Find the function `gg.vehicleManager.removeVehicle` inside its files and add the following code 
+right after the first line:
 
 ```lua
 if (GetResourceState("AdvancedParking") == "started") then
@@ -344,17 +349,15 @@ end
 
 </details>
 
-
-
 ***
 
 ## Jaksam vehicle\_keys
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
 Missing keys after a server restart.
 
-<mark style="color:green;">**Solution**</mark>
+<font style="color:green;">**Solution**</font>
 
 Add the following code to `AdvancedParking/client/cl_integrations.lua`:
 

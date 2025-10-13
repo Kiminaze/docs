@@ -5,7 +5,7 @@
 
 Triggered when a vehicle has been spawned by AdvancedParking.
 
-<mark style="color:red;">**Parameters:**</mark>\
+<font style="color:red;">**Parameters:**</font><br>
 **vehicle** - `int` - The vehicle's server side handle.
 
 ```lua
@@ -14,17 +14,15 @@ AddEventHandler("AP:vehicleSpawned", function(vehicle)
 end)
 ```
 
-
-
 ***
 
 ## AP:cleanup:deletingVehicle
 
 Triggered when a vehicle has been marked for cleanup. Executes right **before** deleting the entity.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**vehicle** - `int` - The vehicle's server side handle.\
-**plate** - `string` - The vehicle's plate (full 8 characters).\
+<font style="color:red;">**Parameters:**</font><br>
+**vehicle** - `int` - The vehicle's server side handle.<br>
+**plate** - `string` - The vehicle's plate (full 8 characters).<br>
 **reason** - `string` - The cleanup reason (`time`, `engineHealth`, `distance`, `zone_<id>`).
 
 ```lua

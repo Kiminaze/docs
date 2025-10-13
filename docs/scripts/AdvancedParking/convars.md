@@ -8,17 +8,19 @@ description: >-
 
 # Convars
 
-{% hint style="info" %}
-All of AdvancedParking's convars are prefixed with the current resource name. If you change the resource name, you change the convar name!
-{% endhint %}
+!!! info
+	All of AdvancedParking's convars are prefixed with the current resource name. If you change the 
+	resource name, you change the convar name!
 
-{% hint style="info" %}
-All following convars can be set to `0` (disabled) or `1` (enabled). The default value is shown in the example below.
-{% endhint %}
+!!! info
+	All following convars can be set to `0` (disabled) or `1` (enabled). The default value is shown 
+	in the example below.
 
 ## telemetry
 
-Enables/disables telemetry. If enabled, sends AdvancedParking's server and client logs to our servers for analysis and debugging. Logs are stored for approximately 7 days under normal circumstances.
+Enables/disables telemetry. If enabled, sends AdvancedParking's server and client logs to our 
+servers for analysis and debugging. Logs are stored for a maximum of 8 days under normal 
+circumstances.
 
 Data includes:
 
@@ -30,8 +32,6 @@ Data includes:
 ```
 setr AdvancedParking_telemetry 0
 ```
-
-
 
 ***
 
