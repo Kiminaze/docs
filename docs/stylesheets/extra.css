@@ -31,3 +31,55 @@
     color: var(--md-accent-fg-color);
     text-decoration: none;
 }
+
+
+
+
+.content-box {
+    background: var(--md-default-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content-box maintitle{
+    margin-top: 0;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    margin-top: 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    border-color: #007BFF;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+.purple-title {
+    color: var(--md-primary-fg-color);
+}
