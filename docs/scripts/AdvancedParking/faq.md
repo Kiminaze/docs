@@ -377,7 +377,7 @@ RegisterNetEvent("AP:checkKeys", function()
     local playerData = ESX.GetPlayerFromId(src)
     local identifier = playerData.identifier
     local job = playerData.getJob().name
-    exports["oxmysql"]:query_async([[
+    exports["oxmysql"]:query([[
         SELECT `plate` 
             FROM `owned_vehicles` 
             WHERE `owner` = ? OR `owner` = ?;
