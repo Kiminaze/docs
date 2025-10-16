@@ -13,35 +13,43 @@ The default controls are defined at the bottom of the config. You have a few pos
 * Remove a control entirely by commenting the whole section.
 * Remove only the secondary bindings by just commenting the altInputType and altKey lines.
 
-Available input types and bindings can be found here:\
+Available input types and bindings can be found here:<br>
 [https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/](https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/)
 
-If you already started the resource and connected to the server once and then you decide to change the bindings, you will also have to do so ingame in the keybinding settings in the FiveM category. This also allows setting custom bindings for players.
+If you already started the resource and connected to the server once and then you decide to change 
+the bindings, you will also have to do so ingame in the keybinding settings in the FiveM category. 
+This also allows setting custom bindings for players.
 
 ***
 
 ## Keys as Items
 
-<mark style="color:red;">**Tl'dr:**</mark>
+<font style="color:red;">**Tl'dr:**</font>
 
 No, this is not possible.
 
-<mark style="color:green;">**Long:**</mark>
+<font style="color:green;">**Long:**</font>
 
-VehicleKeyChain relies heavily on database usage and links several tables together using `FOREIGN KEY`s. This makes managing the data extremely easy and prevents any exploits or problems that can relate to items and managing them in the background.\
-However this completely prevents the use of item metadata as there is no proper way to combine the two features.
+VehicleKeyChain relies heavily on database usage and links several tables together using 
+`FOREIGN KEY`s. This makes managing the data extremely easy and prevents any exploits or problems 
+that can relate to items and managing them in the background.<br>
+However this completely prevents the use of item metadata as there is no proper way to combine the 
+two features.
 
 ***
 
 ## Giving keys from client side
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
-Most key exports are only available on server side to prevent any sort of exploits. This is why you cannot directly give a key to a player on client side.
+Most key exports are only available on server side to prevent any sort of exploits. This is why you 
+cannot directly give a key to a player on client side.
 
-<mark style="color:green;">**Solution**</mark>
+<font style="color:green;">**Solution**</font>
 
-I understand that you need an easy solution for this problem as 99% of scripts rely on client side, so here is a code snippet that you can insert into VKC's `server.lua` that allows giving a temporary key from client side:
+I understand that you need an easy solution for this problem as 99% of scripts rely on client side, 
+so here is a code snippet that you can insert into VKC's `server.lua` that allows giving a 
+temporary key from client side:
 
 ```lua
 RegisterNetEvent("addTempKey", function(plate)
@@ -49,7 +57,8 @@ RegisterNetEvent("addTempKey", function(plate)
 end)
 ```
 
-You can then trigger it from any client side script using the following event (replace `PLATE_TEXT` with the vehicle's plate):
+You can then trigger it from any client side script using the following event (replace `PLATE_TEXT` 
+with the vehicle's plate):
 
 ```lua
 TriggerServerEvent("addTempKey", PLATE_TEXT)
@@ -59,7 +68,7 @@ TriggerServerEvent("addTempKey", PLATE_TEXT)
 
 ## Database error on first script startup
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
 When first starting the script, you are running into the following error:
 
@@ -67,19 +76,22 @@ When first starting the script, you are running into the following error:
 errno: 150 "Foreign key constraint is incorrectly formed"
 ```
 
-<mark style="color:green;">**Solution**</mark>
+<font style="color:green;">**Solution**</font>
 
-Make sure the columns `users.identifier` and `owned_vehicles.plate` in your database are set as a `PRIMARY KEY` (or another kind of key, e.g. `UNIQUE`). Then restart the script and the error should be gone.
+Make sure the columns `users.identifier` and `owned_vehicles.plate` in your database are set as a 
+`PRIMARY KEY` (or another kind of key, e.g. `UNIQUE`). Then restart the script and the error should 
+be gone.
 
 ***
 
 ## Jaksam's JobCreator
 
-<mark style="color:red;">**Issue**</mark>
+<font style="color:red;">**Issue**</font>
 
-JobCreator doesn't use the owned\_vehicles table from ESX. Any job vehicles will not be recognized by VKC.
+JobCreator doesn't use the owned_vehicles table from ESX. Any job vehicles will not be recognized 
+by VKC.
 
-<mark style="color:green;">**Solution**</mark>
+<font style="color:green;">**Solution**</font>
 
 Insert the following code in `VehicleKeyChain/server/server.lua` line 874:
 
@@ -115,10 +127,9 @@ if (isJobCreatorVehicle) then
 end
 ```
 
-<details>
-
+<details markdown="1">
 <summary>Should look like this</summary>
 
-![](<../../.gitbook/assets/image (1).png>)![](../../.gitbook/assets/image.png)
+!["wat"](./assets/image1.png) !["hello"](./assets/image2.png)
 
 </details>

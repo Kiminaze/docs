@@ -39,8 +39,9 @@ foremost!
   the line.
 
 !!! danger ""
-    <font style="color:#c9bb77;">:fontawesome-solid-exclamation-triangle:{ .youtube } If any other script does not delete a vehicle properly (it gets 
-    deleted but appears again) then repeat this step in the respective script.</font>
+    <font style="color:#c9bb77;">:fontawesome-solid-exclamation-triangle:{ .youtube } If any other 
+    script does not delete a vehicle properly (it gets deleted but appears again) then repeat this 
+    step in the respective script.</font>
 
 !!! info
     There might be some scripts out there where this will _not_ work. If you find yourself in this 

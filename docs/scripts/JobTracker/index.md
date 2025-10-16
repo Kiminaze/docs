@@ -4,18 +4,17 @@ description: Dynamic blip syncing for jobs!
 
 # 🌐 JobTracker
 
-## Links
-
-* :shopping\_cart: [**Buy on Tebex**](https://kiminazes-script-gems.tebex.io/package/5436539)
-* [Forum topic](https://forum.cfx.re/t/jobtracker-lets-you-track-your-job-members-across-the-map/4978239)
+<div class="grid cards" markdown>
+- <center><span style="font-size: 32px;">[:shopping_cart: **Buy on Tebex**](https://kiminazes-script-gems.tebex.io/package/5436539)</span></center>
+- <center><span style="font-size: 32px;">[:custom-icons8-fivem: Forum topic](https://forum.cfx.re/t/jobtracker-lets-you-track-your-job-members-across-the-map/4978239)</span></center>
+</div>
 
 ## Description
 
-JobTracker allows the usage of a GPS tracker item to see your coworkers on the map. Blips are synced near realtime and work across the whole map!
+JobTracker allows the usage of a GPS tracker item to see your coworkers on the map. Blips are 
+synced near realtime and work across the whole map!
 
-{% embed url="https://www.youtube.com/watch?v=cLq41mTcPAA" %}
-JobTracker Showcase Video
-{% endembed %}
+<div class="youtube-placeholder" data-videotitle="JobTracker Showcase" data-videoid="cLq41mTcPAA"></div>
 
 ## Features
 

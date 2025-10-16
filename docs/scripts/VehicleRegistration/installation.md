@@ -4,15 +4,16 @@
 
 * OneSync
 * ESX (any version)
-* [kimi\_callbacks](https://github.com/Kiminaze/kimi\_callbacks/releases/latest)
+* [kimi_callbacks](https://github.com/Kiminaze/kimi_callbacks/releases/latest)
 * [NativeUI](https://github.com/FrazzIe/NativeUILua)
 
 ## Instructions
 
 1. Download the script from your keymaster website and extract it into your resources folder.
-2. Download [kimi\_callbacks.zip](https://github.com/Kiminaze/kimi\_callbacks/releases/latest) and extract it into your resources folder.
+2. Download [kimi_callbacks.zip](https://github.com/Kiminaze/kimi_callbacks/releases/latest) and 
+   extract it into your resources folder.
 3. Download and install NativeUI.
-4.  Start the resource in your server.cfg:
+4. Start the resource in your server.cfg:
 
     ```
     ensure VehicleRegistration
@@ -20,7 +21,7 @@
 
 ## Compatibility
 
-* This script relies on the "owned\_vehicles" and "users" table from the default ESX database.
+* This script relies on the "owned_vehicles" and "users" table from the default ESX database.
 * Should be compatible with most other scripts.
 * Fully compatible with my other scripts:
   * [AdvancedParking](https://forum.cfx.re/t/release-advancedparking-prevents-despawns-and-now-saves-bodywork-deformation/2099582)

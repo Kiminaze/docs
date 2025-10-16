@@ -8,8 +8,8 @@ description: These events are executed on server and client side.
 
 Triggered when a vehicle was successfully attached to a transport vehicle.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**vehicleNetworkId** - `int` - The vehicle's network id.\
+<font style="color:red;">**Parameters:**</font><br>
+**vehicleNetworkId** - `int` - The vehicle's network id.<br>
 **transportNetworkId** - `int` - The transport vehicle's network id.
 
 ```lua
@@ -32,7 +32,7 @@ end)
 
 Triggered when a vehicle was successfully detached from a transport vehicle.
 
-<mark style="color:red;">**Parameters:**</mark>\
+<font style="color:red;">**Parameters:**</font><br>
 **vehicleNetworkId** - `int` - The vehicle's network id.
 
 ```lua

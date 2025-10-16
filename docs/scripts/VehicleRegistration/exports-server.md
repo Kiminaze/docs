@@ -4,18 +4,17 @@
 
 Returns the position of a single vehicle.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**playerId** - `int` - The player id of the player that owns the vehicle.\
-**vehicleNetId** - `int` - The vehicle network id.\
+<font style="color:red;">**Parameters:**</font><br>
+**playerId** - `int` - The player id of the player that owns the vehicle.<br>
+**vehicleNetId** - `int` - The vehicle network id.<br>
 **newPlate** - `string` - The new license plate text of a vehicle.
 
-<mark style="color:green;">**Returns:**</mark>\
+<font style="color:green;">**Returns:**</font><br>
 `bool` - True on success.
 
-<pre class="language-lua"><code class="lang-lua"><strong>local success = exports["VehicleRegistration"]:ChangePlate(playerId, vehicleNetId, newPlate)
-</strong></code></pre>
-
-
+```lua
+local success = exports["VehicleRegistration"]:ChangePlate(playerId, vehicleNetId, newPlate)
+```
 
 ***
 
@@ -23,13 +22,14 @@ Returns the position of a single vehicle.
 
 Get the full history of all plate changes from a player.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**playerId** - `int` - The player id of the player that owns the vehicle.\
-**vehicleNetId** - `int` - The vehicle network id.\
+<font style="color:red;">**Parameters:**</font><br>
+**playerId** - `int` - The player id of the player that owns the vehicle.<br>
+**vehicleNetId** - `int` - The vehicle network id.<br>
 **newPlate** - `string` - The new license plate text of a vehicle.
 
-<mark style="color:green;">**Returns:**</mark>\
-`dictionary<string, table<modelHash: int, oldPlate: string, date: string, ownerName: string>>` - List of all plate changes with the current plate as index.
+<font style="color:green;">**Returns:**</font><br>
+`dictionary<string, table<modelHash: int, oldPlate: string, date: string, ownerName: string>>` - 
+List of all plate changes with the current plate as index.
 
 ```lua
 local history = exports["VehicleRegistration"]:GetFullHistory(playerId)
@@ -42,20 +42,19 @@ for plate, data in pairs(history) do
 end
 ```
 
-
-
 ***
 
 ## GetHistory
 
 Get the history of a specific player's plate.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**playerId** - `int` - The player id of a player.\
+<font style="color:red;">**Parameters:**</font><br>
+**playerId** - `int` - The player id of a player.<br>
 **plate** - `string` - The license plate text of a vehicle.
 
-<mark style="color:green;">**Returns:**</mark>\
-`table<table<oldPlate: string, date: string, ownerName: string>>` - List of all plate changes from the specified plate.
+<font style="color:green;">**Returns:**</font><br>
+`table<table<oldPlate: string, date: string, ownerName: string>>` - List of all plate changes from 
+the specified plate.
 
 ```lua
 local history = exports["VehicleRegistration"]:GetHistory(playerId, plate)
@@ -67,19 +66,18 @@ for i = 1, #history do
 end
 ```
 
-
-
 ***
 
 ## GetPlateHistory
 
 Get the history of a specified plate.
 
-<mark style="color:red;">**Parameters:**</mark>\
+<font style="color:red;">**Parameters:**</font><br>
 **plate** - `string` - The license plate text of a vehicle.
 
-<mark style="color:green;">**Returns:**</mark>\
-`table<table<oldPlate: string, date: string, ownerName: string>>` - List of all plate changes from the specified plate.
+<font style="color:green;">**Returns:**</font><br>
+`table<table<oldPlate: string, date: string, ownerName: string>>` - List of all plate changes from 
+the specified plate.
 
 ```lua
 local history = exports["VehicleRegistration"]:GetPlateHistory(plate)

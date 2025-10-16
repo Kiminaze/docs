@@ -4,17 +4,16 @@
 
 Starts tracking the vehicle with the specified plate for a player.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**playerId** - `int` - The player id of the player to start the tracker for.\
+<font style="color:red;">**Parameters:**</font><br>
+**playerId** - `int` - The player id of the player to start the tracker for.<br>
 **plate** - `string` - The license plate text of a vehicle.
 
-<mark style="color:green;">**Returns:**</mark>\
+<font style="color:green;">**Returns:**</font><br>
 `bool` - True on success.
 
-<pre class="language-lua"><code class="lang-lua"><strong>local success = exports["VehicleTracker"]:StartTracker(playerId, plate)
-</strong></code></pre>
-
-
+```lua
+local success = exports["VehicleTracker"]:StartTracker(playerId, plate)
+```
 
 ***
 
@@ -22,12 +21,13 @@ Starts tracking the vehicle with the specified plate for a player.
 
 Stops tracking the vehicle with the specified plate for a player.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**playerId** - `int` - The player id of the player to stop the tracker for.\
+<font style="color:red;">**Parameters:**</font><br>
+**playerId** - `int` - The player id of the player to stop the tracker for.<br>
 **plate** - `string` - The license plate text of a vehicle.
 
-<mark style="color:green;">**Returns:**</mark>\
+<font style="color:green;">**Returns:**</font><br>
 `bool` - True on success.
 
-<pre class="language-lua"><code class="lang-lua"><strong>local success = exports["VehicleTracker"]:StopTracker(playerId, plate)
-</strong></code></pre>
+```lua
+local success = exports["VehicleTracker"]:StopTracker(playerId, plate)
+```

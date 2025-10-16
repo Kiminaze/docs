@@ -1,45 +1,14 @@
 
-# QB
-
-## Ready-made file
-
-You can either directly use this file to replace the original or use the instructions below to make 
-the changes yourself and learn a thing here and there.
-
-<a href="../assets/integrations_qb.lua" download="integrations.lua">
-	:material-download: integrations.lua
-</a>
-
-***
-
-## Initialization
-
-Add the following at the top of the file:
-
-```lua
+-- initialization
 local QB = exports["qb-core"]:GetCoreObject()
-```
 
-***
-
-## Register all commands
-
-Replace the `RegisterCommands` function with the following:
-
-```lua
+-- register all commands
 function RegisterCommands()
 	QB.Commands.Add(attachClampCommand, "Attach a clamp to the closest vehicle wheel.", nil, false, OnAttachClampCommand, table.unpack(commandPermissions))
 	QB.Commands.Add(removeClampCommand, "Remove the clamp from the closest vehicle wheel.", nil, false, OnRemoveClampCommand, table.unpack(commandPermissions))
 end
-```
 
-***
-
-## Register all items
-
-Replace the `RegisterItems` function with the following:
-
-```lua
+-- register all items
 function RegisterItems()
 	if (clampItemName) then
 		QB.Functions.CreateUseableItem(clampItemName, StartClampingProcess)
@@ -51,46 +20,24 @@ function RegisterItems()
 		QB.Functions.CreateUseableItem(destroyItemName, StartDestructionProcess)
 	end
 end
-```
 
-***
-
-## Check if a player has an item
-
-Replace the `GetPlayerHasItem` function with the following:
-
-```lua
+-- check if a player has an item
 function GetPlayerHasItem(playerId, itemName)
 	local player = QB.Functions.GetPlayer(playerId)
 	assert(player, ("\"PlayerData\" could not be found for player \"%s\""):format(GetPlayerName(playerId)))
 	return player.Functions.GetItemByName(itemName) ~= nil
 end
-```
 
-***
-
-## Add an item to player inventory
-
-Replace the `AddPlayerItem` function with the following:
-
-```lua
+-- add an item to player inventory
 function AddPlayerItem(playerId, itemName)
 	local player = QB.Functions.GetPlayer(playerId)
 	assert(player, ("\"PlayerData\" could not be found for player \"%s\""):format(GetPlayerName(playerId)))
 	return player.Functions.AddItem(itemName, 1)
 end
-```
 
-***
-
-## Remove an item from player inventory
-
-Replace the `RemovePlayerItem` function with the following:
-
-```lua
+-- remove an item from player inventory
 function RemovePlayerItem(playerId, itemName)
 	local player = QB.Functions.GetPlayer(playerId)
 	assert(player, ("\"PlayerData\" could not be found for player \"%s\""):format(GetPlayerName(playerId)))
 	player.Functions.RemoveItem(itemName, 1)
 end
-```

@@ -1,34 +1,10 @@
 
-# ESX
-
-## Ready-made file
-
-You can either directly use this file to replace the original or use the instructions below to make 
-the changes yourself and learn a thing here and there.
-
-<a href="../assets/integrations_esx.lua" download="integrations.lua">
-	:material-download: integrations.lua
-</a>
-
-***
-
-## Initialization
-
-Add the following at the top of the file:
-
-```lua
+-- initialization
 local ESX = exports["es_extended"]:getSharedObject()
-```
 
-***
-
-## Register all commands
-
-Replace the `RegisterCommands` function with the following:
-
-```lua
+-- register all commands
 function RegisterCommands()
-ESX.RegisterCommand(attachClampCommand, commandPermissions, function(xPlayer, args, showError)
+	ESX.RegisterCommand(attachClampCommand, commandPermissions, function(xPlayer, args, showError)
 		OnAttachClampCommand(xPlayer.source)
 	end, false, { help = "Attach a clamp to the closest vehicle wheel." })
 
@@ -36,15 +12,8 @@ ESX.RegisterCommand(attachClampCommand, commandPermissions, function(xPlayer, ar
 		OnRemoveClampCommand(xPlayer.source)
 	end, false, { help = "Remove the clamp from the closest vehicle wheel." })
 end
-```
 
-***
-
-## Register all items
-
-Replace the `RegisterItems` function with the following:
-
-```lua
+-- register all items
 function RegisterItems()
 	if (clampItemName) then
 		ESX.RegisterUsableItem(clampItemName, StartClampingProcess)
@@ -56,48 +25,26 @@ function RegisterItems()
 		ESX.RegisterUsableItem(destroyItemName, StartDestructionProcess)
 	end
 end
-```
 
-***
-
-## Check if a player has an item
-
-Replace the `GetPlayerHasItem` function with the following:
-
-```lua
+-- check if a player has an item
 function GetPlayerHasItem(playerId, itemName)
 	local playerData = ESX.GetPlayerFromId(playerId)
 	assert(playerData ~= nil, ("\"PlayerData\" could not be found for player \"%s\""):format(GetPlayerName(playerId)))
 	local item = playerData.getInventoryItem(itemName)
 	return item ~= nil and item.count > 0
 end
-```
 
-***
-
-## Add an item to player inventory
-
-Replace the `AddPlayerItem` function with the following:
-
-```lua
+-- add an item to player inventory
 function AddPlayerItem(playerId, itemName)
 	local playerData = ESX.GetPlayerFromId(playerId)
 	assert(playerData ~= nil, ("\"PlayerData\" could not be found for player \"%s\""):format(GetPlayerName(playerId)))
 	playerData.addInventoryItem(itemName, 1)
 	return true
 end
-```
 
-***
-
-## Remove an item from player inventory
-
-Replace the `RemovePlayerItem` function with the following:
-
-```lua
+-- remove an item from player inventory
 function RemovePlayerItem(playerId, itemName)
 	local playerData = ESX.GetPlayerFromId(playerId)
 	assert(playerData ~= nil, ("\"PlayerData\" could not be found for player \"%s\""):format(GetPlayerName(playerId)))
 	playerData.removeInventoryItem(itemName, 1)
 end
-```

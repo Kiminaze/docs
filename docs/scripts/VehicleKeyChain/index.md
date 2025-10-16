@@ -4,18 +4,18 @@ description: Key management made easy!
 
 # 🔑 VehicleKeyChain
 
-## Links
-
-* :shopping\_cart: [**Buy on Tebex**](https://kiminazes-script-gems.tebex.io/package/4524211)
-* [Forum topic](https://forum.cfx.re/t/release-vehicle-key-chain-v4-1-4-esx-qb/3319563)
+<div class="grid cards" markdown>
+- <center><span style="font-size: 32px;">[:shopping_cart: **Buy on Tebex**](https://kiminazes-script-gems.tebex.io/package/4524211)</span></center>
+- <center><span style="font-size: 32px;">[:custom-icons8-fivem: Forum topic](https://forum.cfx.re/t/release-vehicle-key-chain-v4-1-4-esx-qb/3319563)</span></center>
+</div>
 
 ## Description
 
-VehicleKeyChain provides you with the means to manage your vehicle keys. You can create new keys and give them to other players and exchange a vehicle's locks to invalidate all keys. Vehicle (un)locking is completely dynamic and works without hiccups.
+VehicleKeyChain provides you with the means to manage your vehicle keys. You can create new keys 
+and give them to other players and exchange a vehicle's locks to invalidate all keys. Vehicle 
+(un)locking is completely dynamic and works without hiccups.
 
-{% embed url="https://www.youtube.com/watch?v=Wqn_Y1cJsnY" %}
-VehicleKeyChain Showcase Video
-{% endembed %}
+<div class="youtube-placeholder" data-videotitle="VehicleKeyChain Showcase" data-videoid="Wqn_Y1cJsnY"></div>
 
 ## Features
 

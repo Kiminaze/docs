@@ -1,6 +1,8 @@
+
 # Commands
 
-Commands can only be used by admins or other specified groups (see `commandPermissions` in the config).
+Commands can only be used by admins or other specified groups (see `commandPermissions` in the 
+config).
 
 ## attachclamp
 

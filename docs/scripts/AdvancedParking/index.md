@@ -1,4 +1,5 @@
-﻿---
+﻿
+---
 description: Persistent and dynamic vehicles even across server restarts!
 ---
 
@@ -37,11 +38,15 @@ again.
   * Option to send cleaned up vehicles to the player garage (requires **ESX** or **QB**).
 * Non-networked (or client side only) vehicles will be ignored.
 * Can be restarted any time.
-* Several [**Exports**](https://docs.kiminaze.de/scripts/advancedparking/exports-server) and [**Events**](https://docs.kiminaze.de/scripts/advancedparking/server-events) to extend functionality in your own scripts.
+* Several [**Exports**](https://docs.kiminaze.de/scripts/advancedparking/exports-server) and 
+  [**Events**](https://docs.kiminaze.de/scripts/advancedparking/server-events) to extend 
+  functionality in your own scripts.
 
 ## Saved Values
 
-While this script aims to save all variables of a vehicle, some of them can not yet be updated on server side and will only be updated when entering/leaving the vehicle on client side. The dynamic server side variables are marked with an **(S)**.
+While this script aims to save all variables of a vehicle, some of them can not yet be updated on 
+server side and will only be updated when entering/leaving the vehicle on client side. The dynamic 
+server side variables are marked with an **(S)**.
 
 * Position and rotation **(S)**
 * Status:
@@ -86,4 +91,5 @@ While this script aims to save all variables of a vehicle, some of them can not 
 * Server side:
   * Idle: 0.00ms
   * While updating/spawning: up to 0.05ms on average (updates happen every 5 seconds)
-  * Server side performance is highly dependent on the amount of vehicles and players present and several other factors. Most of the time, resource usage will actually be quite low.
+  * Server side performance is highly dependent on the amount of vehicles and players present and 
+    several other factors. Most of the time, resource usage will actually be quite low.

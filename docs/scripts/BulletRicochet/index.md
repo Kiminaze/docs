@@ -4,18 +4,16 @@ description: Be mindful where your shots land!
 
 # 🎯 BulletRicochet
 
-## Links
-
-* **Buy here:** [https://kiminazes-script-gems.tebex.io/package/5577489](https://kiminazes-script-gems.tebex.io/package/5577489)
-* Forum topic: [https://forum.cfx.re/t/bulletricochet-ricochet-bullets-with-extreme-configurability-standalone/5082694](https://forum.cfx.re/t/bulletricochet-ricochet-bullets-with-extreme-configurability-standalone/5082694)
+<div class="grid cards" markdown>
+- <center><span style="font-size: 32px;">[:shopping_cart: **Buy on Tebex**](https://kiminazes-script-gems.tebex.io/package/5577489)</span></center>
+- <center><span style="font-size: 32px;">[:custom-icons8-fivem: Forum topic](https://forum.cfx.re/t/bulletricochet-ricochet-bullets-with-extreme-configurability-standalone/5082694)</span></center>
+</div>
 
 ## Description
 
 This resource allows bullets to ricochet off most surfaces with high configurability.
 
-{% embed url="https://www.youtube.com/watch?v=hObQq5qb2RE" %}
-BulletRicochet Showcase Video
-{% endembed %}
+<div class="youtube-placeholder" data-videotitle="BulletRicochet Showcase" data-videoid="hObQq5qb2RE"></div>
 
 ## Features
 

@@ -1,3 +1,4 @@
+
 ---
 description: >-
   If you want to define your own transport vehicles (e.g. modded vehicles), you
@@ -6,9 +7,7 @@ description: >-
 
 # Creating a new transport
 
-{% embed url="https://www.youtube.com/watch?v=oCxglaaeG-Q" %}
-How to showcase video
-{% endembed %}
+<div class="youtube-placeholder" data-videotitle="How to create a new transport" data-videoid="oCxglaaeG-Q"></div>
 
 1. Make sure there is enough clear space around you.
 2. Get the vehicle you want to define as a transport. You have to sit inside or be close to it.
