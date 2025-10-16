@@ -1,21 +1,25 @@
+
 # 🎦 OrbitCam
 
-{% embed url="https://www.youtube.com/watch?v=IrrPiBaRS18" %}
-OrbitCam Showcase Video
-{% endembed %}
-
-## Links
-
-* [Latest release version](https://github.com/Kiminaze/OrbitCam/releases/latest)
-* [Forum topic](https://forum.cfx.re/t/free-orbitcam-lets-you-orbit-around-a-given-point-or-entity/4971536)
+<div class="grid cards" markdown>
+- <center><span style="font-size: 32px;">[:simple-github:{ .github } **GitHub**](https://github.com/Kiminaze/OrbitCam)</span></center>
+- <center><span style="font-size: 32px;">[:custom-icons8-fivem: Forum topic](https://forum.cfx.re/t/free-orbitcam-lets-you-orbit-around-a-given-point-or-entity/4971536)</span></center>
+</div>
 
 ## Description
 
-The OrbitCam is a script that allows you to have a separate camera that can orbit a given point or entity. This is very useful for certain occasions where the default camera is useless or where you need some more control over the camera angle.
+The OrbitCam is a script that allows you to have a separate camera that can orbit a given point or 
+entity. This is very useful for certain occasions where the default camera is useless or where you 
+need some more control over the camera angle.
 
-When the player is dead, you can no longer move the camera in the base game. This allows you to change that. You could also start a camera when a player is sitting on some benches where the default camera would usually glitch into the player.
+When the player is dead, you can no longer move the camera in the base game. This allows you to 
+change that. You could also start a camera when a player is sitting on some benches where the 
+default camera would usually glitch into the player.
 
-Since v1.3.0 it also includes an "automatic" orbit mode where it automatically orbits around the given point/entity/bone.
+Since v1.3.0 it also includes an "automatic" orbit mode where it automatically orbits around the 
+given point/entity/bone.
+
+<div class="youtube-placeholder" data-videotitle="OrbitCam Showcase" data-videoid="IrrPiBaRS18"></div>
 
 ## Features
 

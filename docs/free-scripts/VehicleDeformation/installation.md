@@ -1,10 +1,11 @@
+
 # Installation
 
-## Requirements <a href="#requirements" id="requirements"></a>
+## Requirements
 
 * OneSync
 
-## Instructions <a href="#instructions" id="instructions"></a>
+## Instructions
 
 1. Download the latest version from [Github](https://github.com/Kiminaze/VehicleDeformation/releases/latest).
 2. Extract the folder into your server's resources folder.

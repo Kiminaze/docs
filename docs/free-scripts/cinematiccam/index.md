@@ -1,21 +1,22 @@
 
 # 🎥 CinematicCam
 
-<div class="youtube-placeholder" data-videoid="TWoOjqfDeng" data-videotitle="CinematicCam Showcase"></div>
-
-## Links { .purple-title }
-
-* [Latest release version](https://github.com/Kiminaze/cinematiccam/releases/latest/cinematiccam.zip)
-* [Forum topic](https://forum.cfx.re/t/cinematic-cam-camera-for-flying-around-and-attaching-to-entities/194753)
+<div class="grid cards" markdown>
+- <center><span style="font-size: 32px;">[:simple-github:{ .github } **GitHub**](https://github.com/Kiminaze/cinematiccam)</span></center>
+- <center><span style="font-size: 32px;">[:custom-icons8-fivem: Forum topic](https://forum.cfx.re/t/cinematic-cam-camera-for-flying-around-and-attaching-to-entities/194753)</span></center>
+</div>
 
 <br>
 
 ## Description { .purple-title }
 
-The CinematicCam provides the user with an easy to use “additional” camera, that can be moved freely in the world.
-Additionally it can be attached to any npc/player/vehicle in the game in order to provide something similar to a “Dashcam” or just 
-for fancy screenshots or videos.
-You can set it on a specific position and angle relative to your character and the camera will move with the entity.
+The CinematicCam provides the user with an easy to use “additional” camera, that can be moved 
+freely in the world. Additionally it can be attached to any npc/player/vehicle in the game in order 
+to provide something similar to a “Dashcam” or just for fancy screenshots or videos. You can set it 
+on a specific position and angle relative to your character and the camera will move with the 
+entity.
+
+<div class="youtube-placeholder" data-videotitle="CinematicCam Showcase" data-videoid="TWoOjqfDeng"></div>
 
 <br>
 

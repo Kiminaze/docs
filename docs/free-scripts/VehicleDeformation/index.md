@@ -1,21 +1,22 @@
+
 ---
 description: Easy getting and setting of vehicle deformation!
 ---
 
 # 🚜 VehicleDeformation
 
-{% embed url="https://www.youtube.com/watch?v=bxdsG5_DeXo" %}
-VehicleDeformation Showcase Video
-{% endembed %}
-
-## Links
-
-* [Latest release version](https://github.com/Kiminaze/VehicleDeformation/releases/latest)
-* [Forum topic](https://forum.cfx.re/t/release-vehicledeformation-get-set-and-sync-vehicle-deformations-now-a-full-resource/4796026)
+<div class="grid cards" markdown>
+- <center><span style="font-size: 32px;">[:simple-github:{ .github } **GitHub**](https://github.com/Kiminaze/VehicleDeformation)</span></center>
+- <center><span style="font-size: 32px;">[:custom-icons8-fivem: Forum topic](https://forum.cfx.re/t/release-vehicledeformation-get-set-and-sync-vehicle-deformations-now-a-full-resource/4796026)</span></center>
+</div>
 
 ## Description
 
-This is a small resource that allows saving and reapplying of vehicle bodywork deformation. It also features full synchronization of the damage between all players. No more weird situations where other players cannot see the damage on your vehicle!
+This is a small resource that allows saving and reapplying of vehicle bodywork deformation. It also 
+features full synchronization of the damage between all players. No more weird situations where 
+other players cannot see the damage on your vehicle!
+
+<div class="youtube-placeholder" data-videotitle="VehicleDeformation Showcase" data-videoid="bxdsG5_DeXo"></div>
 
 ## Features
 

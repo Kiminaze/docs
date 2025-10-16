@@ -1,8 +1,9 @@
+
 # Exports (server)
 
-## FixVehicleDeformation(vehicle) <a href="#remove-callbackname" id="remove-callbackname"></a>
+## FixVehicleDeformation(vehicle)
 
 Fixes the deformation of a vehicle.
 
-<mark style="color:red;">**Parameters:**</mark>\
+<font style="color:red;">**Parameters:**</font><br>
 **vehicle** - `number` - The handle of the vehicle that needs fixing.

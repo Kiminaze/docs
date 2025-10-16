@@ -1,6 +1,9 @@
+
 # Examples
 
-In these examples, we will register and trigger a server callback that can get a vehicles position from its plate across the whole map and we will register a client callback that retrieves the distance from a player to a specified position.
+In these examples, we will register and trigger a server callback that can get a vehicles position 
+from its plate across the whole map and we will register a client callback that retrieves the 
+distance from a player to a specified position.
 
 ## Client side
 

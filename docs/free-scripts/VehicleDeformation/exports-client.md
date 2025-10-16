@@ -1,16 +1,16 @@
+
 # Exports (client)
 
 ## GetVehicleDeformation(vehicle)
 
 Gets the vehicles deformation in a table.
 
-<mark style="color:red;">**Parameters:**</mark>\
+<font style="color:red;">**Parameters:**</font><br>
 **vehicle** - `number` - The handle of the vehicle.
 
-<mark style="color:green;">**Returns:**</mark>\
-`table<table<offset: vector3, damage: number>>` - List of offsets from the vehicle and the relative damage.
-
-
+<font style="color:green;">**Returns:**</font><br>
+`table<table<offset: vector3, damage: number>>` - List of offsets from the vehicle and the relative 
+damage.
 
 ***
 
@@ -18,11 +18,9 @@ Gets the vehicles deformation in a table.
 
 Sets the deformation on a vehicle.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**vehicle** - `number` - The handle of the vehicle.\
+<font style="color:red;">**Parameters:**</font><br>
+**vehicle** - `number` - The handle of the vehicle.<br>
 **deformation** - `table<table<offset: vector3, damage: vector3>>` - The deformation values.
-
-
 
 ***
 
@@ -30,10 +28,8 @@ Sets the deformation on a vehicle.
 
 Fixes the deformation of a vehicle.
 
-<mark style="color:red;">**Parameters:**</mark>\
+<font style="color:red;">**Parameters:**</font><br>
 **vehicle** - `number` - The handle of the vehicle.
-
-
 
 ***
 
@@ -41,14 +37,14 @@ Fixes the deformation of a vehicle.
 
 Compares both deformation tables and returns if the first one is worse than the second.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**firstDeformation** - `table<table<offset: vector3, damage: number>>` - The first deformation table.\
-**secondDeformation** - `table<table<offset: vector3, damage: number>>` - The second deformation table.
+<font style="color:red;">**Parameters:**</font><br>
+**firstDeformation** - `table<table<offset: vector3, damage: number>>` - The first deformation 
+table.<br>
+**secondDeformation** - `table<table<offset: vector3, damage: number>>` - The second deformation 
+table.
 
-<mark style="color:green;">**Returns:**</mark>\
+<font style="color:green;">**Returns:**</font><br>
 `bool` - True if the first deformation is worse than the second one.
-
-
 
 ***
 
@@ -56,14 +52,14 @@ Compares both deformation tables and returns if the first one is worse than the 
 
 Compares both deformation tables and returns if they are equal.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**firstDeformation** - `table<table<offset: vector3, damage: number>>` - The first deformation table.\
-**secondDeformation** - `table<table<offset: vector3, damage: number>>` - The second deformation table.
+<font style="color:red;">**Parameters:**</font><br>
+**firstDeformation** - `table<table<offset: vector3, damage: number>>` - The first deformation 
+table.<br>
+**secondDeformation** - `table<table<offset: vector3, damage: number>>` - The second deformation 
+table.
 
-<mark style="color:green;">**Returns:**</mark>\
+<font style="color:green;">**Returns:**</font><br>
 `bool` - True if both deformation tables are equal.
-
-
 
 ***
 
@@ -71,8 +67,8 @@ Compares both deformation tables and returns if they are equal.
 
 Returns all offsets for a specified vehicle
 
-<mark style="color:red;">**Parameters:**</mark>\
+<font style="color:red;">**Parameters:**</font><br>
 **vehicle** - `number` - The handle of the vehicle.
 
-<mark style="color:green;">**Returns:**</mark>\
+<font style="color:green;">**Returns:**</font><br>
 `table<vector3>` - A table containing all offsets around a vehicle.

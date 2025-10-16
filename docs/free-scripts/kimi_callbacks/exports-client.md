@@ -1,14 +1,14 @@
+
 # Exports (client)
 
 ## Register(callbackName, callbackHandler)
 
-Registers a callback on client side. The server can then call this callback to request data from a client.
+Registers a callback on client side. The server can then call this callback to request data from a 
+client.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**callbackName** - `string` - The name of the callback to register (must be unique!).\
+<font style="color:red;">**Parameters:**</font><br>
+**callbackName** - `string` - The name of the callback to register (must be unique!).<br>
 **callbackHandler** - `function` - The function to be executed that will return your values.
-
-
 
 ***
 
@@ -16,10 +16,8 @@ Registers a callback on client side. The server can then call this callback to r
 
 Removes a callback from client side.
 
-<mark style="color:red;">**Parameters:**</mark>\
+<font style="color:red;">**Parameters:**</font><br>
 **callbackName** - `string` - The name of the callback you want to remove.
-
-
 
 ***
 
@@ -27,14 +25,12 @@ Removes a callback from client side.
 
 Triggers a (blocking) server callback with a default timeout of 5000ms.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**callbackName** - `string` - The name of the callback to execute.\
-&#xNAN;**...** - `?` - The values you need to send to the server for the callback to work.
+<font style="color:red;">**Parameters:**</font><br>
+**callbackName** - `string` - The name of the callback to execute.<br>
+**...** - `?` - The values you need to send to the server for the callback to work.
 
-<mark style="color:green;">**Returns:**</mark>\
+<font style="color:green;">**Returns:**</font><br>
 `...` - Any values returned from the server callback.
-
-
 
 ***
 
@@ -42,15 +38,13 @@ Triggers a (blocking) server callback with a default timeout of 5000ms.
 
 Triggers a (blocking) server callback with a specified timeout.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**callbackName** - `string` - The name of the callback to execute.\
-**timeout** - `number` - The timeout in milliseconds.\
-&#xNAN;**...** - `?` - The values you need to send to the server for the callback to work.
+<font style="color:red;">**Parameters:**</font><br>
+**callbackName** - `string` - The name of the callback to execute.<br>
+**timeout** - `number` - The timeout in milliseconds.<br>
+**...** - `?` - The values you need to send to the server for the callback to work.
 
-<mark style="color:green;">**Returns:**</mark>\
+<font style="color:green;">**Returns:**</font><br>
 `...` - Any values returned from the server callback.
-
-
 
 ***
 
@@ -58,12 +52,11 @@ Triggers a (blocking) server callback with a specified timeout.
 
 Triggers a server callback with a default timeout of 5000ms and executes a callback function.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**callbackName** - `string` - The name of the callback to execute.\
-**handler** - `function` - The function to execute after the callback succeeded. It's parameters are the return values from the callback.\
-&#xNAN;**...** - `?` - The values you need to send to the server for the callback to work.
-
-
+<font style="color:red;">**Parameters:**</font><br>
+**callbackName** - `string` - The name of the callback to execute.<br>
+**handler** - `function` - The function to execute after the callback succeeded. It's parameters 
+are the return values from the callback.<br>
+**...** - `?` - The values you need to send to the server for the callback to work.
 
 ***
 
@@ -71,8 +64,9 @@ Triggers a server callback with a default timeout of 5000ms and executes a callb
 
 Triggers a server callback with a specified timeout and executes a callback function.
 
-<mark style="color:red;">**Parameters:**</mark>\
-**callbackName** - `string` - The name of the callback to execute.\
-**timeout** - `number` - The timeout in milliseconds.\
-**handler** - `function` - The function to execute after the callback succeeded. It's parameters are the return values from the callback.\
-&#xNAN;**...** - `?` - The values you need to send to the server for the callback to work.
+<font style="color:red;">**Parameters:**</font><br>
+**callbackName** - `string` - The name of the callback to execute.<br>
+**timeout** - `number` - The timeout in milliseconds.<br>
+**handler** - `function` - The function to execute after the callback succeeded. It's parameters 
+are the return values from the callback.<br>
+**...** - `?` - The values you need to send to the server for the callback to work.

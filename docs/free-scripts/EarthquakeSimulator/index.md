@@ -1,15 +1,17 @@
+
 # 🏔️ EarthquakeSimulator
 
-## Links
-
-{% embed url="https://www.youtube.com/watch?v=23IjCfy2c4o" %}
-
-* [Latest release version](https://github.com/Kiminaze/EarthquakeSimulator/releases/latest)
-* [Forum topic](https://forum.cfx.re/t/earthquake-simulator-create-chaos-and-confusion/5279324)
+<div class="grid cards" markdown>
+- <center><span style="font-size: 32px;">[:simple-github:{ .github } **GitHub**](https://github.com/Kiminaze/EarthquakeSimulator)</span></center>
+- <center><span style="font-size: 32px;">[:custom-icons8-fivem: Forum topic](https://forum.cfx.re/t/earthquake-simulator-create-chaos-and-confusion/5279324)</span></center>
+</div>
 
 ## Description
 
-This is a small resource that allows you to start a server wide earthquake that affects not only players but also peds, vehicles and objects!
+This is a small resource that allows you to start a server wide earthquake that affects not only 
+players but also peds, vehicles and objects!
+
+<div class="youtube-placeholder" data-videotitle="EarthquakeSimulator Showcase" data-videoid="23IjCfy2c4o"></div>
 
 ## Features
 
