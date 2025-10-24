@@ -2,3 +2,6 @@
 nav:
   - "*"
   - DeathCam (deprecated): DeathCam
+
+not_in_nav: |
+  DeathCam
