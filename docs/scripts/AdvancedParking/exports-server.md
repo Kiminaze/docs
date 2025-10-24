@@ -21,8 +21,8 @@ local success = exports["AdvancedParking"]:DeleteVehicle(vehicle, false)
 ## GetVehiclePosition
 
 Returns the position of a single vehicle. If vehicle is present on server side will get the 
-position using \`GetEntityCoords\`. If not present, it will check AdvancedParking's data for the 
-last saved position.
+position using `GetEntityCoords`. If not present, it will check AdvancedParking's data for the last 
+saved position.
 
 <font style="color:red;">**Parameters:**</font><br>
 **plate** - `string` - The license plate text of a vehicle (not case sensitive) (checks full plate 
@@ -40,8 +40,8 @@ local position = exports["AdvancedParking"]:GetVehiclePosition(plate)
 ## GetVehiclePositions
 
 Returns the positions of several given vehicles. If vehicle is present on server side will get the 
-position using \`GetEntityCoords\`. If not present, it will check AdvancedParking's data for the 
-last saved position.
+position using `GetEntityCoords`. If not present, it will check AdvancedParking's data for the last 
+saved position.
 
 <font style="color:red;">**Parameters:**</font><br>
 **plates** - `table<string>` - Table containing license plates (not case sensitive) (checks full 
@@ -155,7 +155,6 @@ if identifier was not found.
 
 ```lua
 local identifier = Entity(vehicle)?.state?.ap_id
-
 exports["AdvancedParking"]:ForceVehicleUpdateInDB(identifier)
 ```
 

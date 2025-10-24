@@ -1,6 +1,3 @@
----
-description: Frequently Assessed QEDs
----
 
 # FAQ
 
@@ -128,8 +125,8 @@ end
 ```
 
 <details markdown="1">
-<summary>Should look like this</summary>
+<summary>Should look like this:</summary>
 
-!["wat"](./assets/image1.png) !["hello"](./assets/image2.png)
+!["Line 874"](./assets/image1.png) !["Line 512"](./assets/image2.png)
 
 </details>

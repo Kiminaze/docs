@@ -1,8 +1,4 @@
 
----
-description: New way to interact with vehicles!
----
-
 # 📃 VehicleInteraction
 
 <div class="grid cards" markdown>

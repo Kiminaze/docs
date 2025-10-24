@@ -27,6 +27,6 @@ Triggered when a vehicle has been marked for cleanup. Executes right **before** 
 
 ```lua
 AddEventHandler("AP:vehicleSpawned", function(vehicle)
-    print("Vehicle " .. GetVehicleNumberPlateText(vehicle) .. " spawned")
+    print("Vehicle " .. GetVehicleNumberPlateText(vehicle) .. " was deleted")
 end)
 ```

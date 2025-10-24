@@ -1,8 +1,4 @@
 
----
-description: Easy getting and setting of vehicle deformation!
----
-
 # 🚜 VehicleDeformation
 
 <div class="grid cards" markdown>

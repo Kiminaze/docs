@@ -1,3 +1,4 @@
+
 # Installation
 
 ## Requirements
@@ -11,10 +12,9 @@
 ## Instructions
 
 1. Download the script from your keymaster website and extract it into your resources folder.
-2. Download [kimi_callbacks.zip](https://github.com/Kiminaze/kimi_callbacks/releases/latest) and 
-   extract it into your resources folder.
+2. Download [kimi_callbacks.zip](https://github.com/Kiminaze/kimi_callbacks/releases/latest/download/kimi_callbacks.zip) 
+   and extract it into your resources folder.
 3. Start the resource in your server.cfg:
-
     ```
     ensure VehicleTracker
     ```

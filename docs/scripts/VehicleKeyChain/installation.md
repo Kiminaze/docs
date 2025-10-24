@@ -5,19 +5,21 @@
 
 * OneSync
 * ESX or QB
-* [kimi_callbacks](https://github.com/Kiminaze/kimi\_callbacks/releases/latest)
+* [kimi_callbacks](https://github.com/Kiminaze/kimi_callbacks/releases/latest)
 * Choose one:
-  * [ContextMenu](https://forum.cfx.re/t/release-contextmenu-create-a-new-kind-of-menu/2719007)
+  * [ContextMenu](https://github.com/Kiminaze/ContextMenu/releases/latest)
   * [NativeUILua](https://github.com/FrazzIe/NativeUILua)
 
 ## Instructions
 
-1. Download the script from [Portal](https://portal.cfx.re/assets/created-assets) and extract it 
+1. Download the script from [Portal](https://portal.cfx.re/assets/granted-assets) and extract it 
    into your resources folder.
-2. Download [kimi_callbacks.zip](https://github.com/Kiminaze/kimi\_callbacks/releases/latest) and 
-   extract it into your resources folder.
-3. Download and install NativeUILua (or ContextMenu).
-4.  Start the resource in your server.cfg:
+2. Download [kimi_callbacks.zip](https://github.com/Kiminaze/kimi_callbacks/releases/latest/download/kimi_callbacks.zip) 
+   and extract it into your resources folder.
+3. Download [NativeUILua](https://github.com/FrazzIe/NativeUILua/archive/refs/heads/master.zip) 
+   or [ContextMenu](https://github.com/Kiminaze/ContextMenu/releases/latest/download/ContextMenu.zip) 
+   and extract it into your resources folder.
+4. Start the resource in your server.cfg:
 
     ```
     ensure VehicleKeyChain

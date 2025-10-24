@@ -44,8 +44,7 @@ CB:Register("getVehiclePositionFromPlate", function(playerId, plate)
     return nil
 end)
 
--- function that triggers a callback to receive the players distance 
---    to a specified position
+-- function that triggers a callback to receive the players distance to a specified position
 function GetPlayerDistanceToPosition(playerId, position)
     local distance = CB:Trigger("getPlayerDistanceToPosition", playerId, position)
     return distance

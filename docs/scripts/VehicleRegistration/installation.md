@@ -1,3 +1,4 @@
+
 # Installation
 
 ## Requirements
@@ -5,16 +6,17 @@
 * OneSync
 * ESX (any version)
 * [kimi_callbacks](https://github.com/Kiminaze/kimi_callbacks/releases/latest)
-* [NativeUI](https://github.com/FrazzIe/NativeUILua)
+* [NativeUILua](https://github.com/FrazzIe/NativeUILua)
 
 ## Instructions
 
-1. Download the script from your keymaster website and extract it into your resources folder.
-2. Download [kimi_callbacks.zip](https://github.com/Kiminaze/kimi_callbacks/releases/latest) and 
+1. Download the script from [Portal](https://portal.cfx.re/assets/granted-assets) and extract it 
+   into your resources folder.
+2. Download [kimi_callbacks.zip](https://github.com/Kiminaze/kimi_callbacks/releases/latest/download/kimi_callbacks.zip) 
+   and extract it into your resources folder.
+3. Download [NativeUILua](https://github.com/FrazzIe/NativeUILua/archive/refs/heads/master.zip) and 
    extract it into your resources folder.
-3. Download and install NativeUI.
 4. Start the resource in your server.cfg:
-
     ```
     ensure VehicleRegistration
     ```

@@ -4,16 +4,18 @@
 ## Requirements
 
 * Onesync
-* [ContextMenu](https://forum.cfx.re/t/release-contextmenu-v2-0-major-update/4834051)
+* [ContextMenu](https://github.com/Kiminaze/ContextMenu/releases/latest)
 * [kimi_callbacks](https://github.com/Kiminaze/kimi_callbacks/releases/latest)
 * optional: ESX / QB
 
 ## Instructions
 
-1. Download the script from your keymaster website and extract it into your resources folder.
-2. Download and install ContextMenu.
-3. Download [kimi_callbacks.zip](https://github.com/Kiminaze/kimi_callbacks/releases/latest) and 
-   extract it into your resources folder.
+1. Download the script from [Portal](https://portal.cfx.re/assets/granted-assets) and extract it 
+   into your resources folder.
+2. Download [ContextMenu.zip](https://github.com/Kiminaze/ContextMenu/releases/latest/download/ContextMenu.zip) 
+   and extract it into your resources folder.
+3. Download [kimi_callbacks.zip](https://github.com/Kiminaze/kimi_callbacks/releases/latest/download/kimi_callbacks.zip) 
+   and extract it into your resources folder.
 4. Start the resource in your server.cfg:
 
     ```

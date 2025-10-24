@@ -12,22 +12,23 @@ Enable/disable the ability to interact with the script functions for a single cl
 exports["VehicleTransport"]:Enable(false)
 ```
 
-!!! example title="Example for ESX and enabling it for a single job:"
+<div class="infobox info" markdown="1">
+Example for ESX and enabling it for a single job:
+First open the `config.lua` and set the option `defaultEnabled` to false. This will disable the script for everyone. After that you can enable the script via code:
 
-    First open the `config.lua` and set the option `defaultEnabled` to false. This will disable the script for everyone. After that you can enable the script via code:
+```lua
+RegisterNetEvent("esx:playerLoaded", function(xPlayer)
+    ESX.PlayerData = xPlayer
 
-    ```lua
-    RegisterNetEvent("esx:playerLoaded", function(xPlayer)
-        ESX.PlayerData = xPlayer
+    if (ESX.PlayerData.job.name == "mechanic") then
+        exports["VehicleTransport"]:Enable(true)
+    end
+end)
 
-        if (ESX.PlayerData.job.name == "mechanic") then
-            exports["VehicleTransport"]:Enable(true)
-        end
-    end)
+RegisterNetEvent("esx:setJob", function(job)
+    exports["VehicleTransport"]:Enable(job.name == "mechanic")
 
-    RegisterNetEvent("esx:setJob", function(job)
-        exports["VehicleTransport"]:Enable(job.name == "mechanic")
-
-        ESX.PlayerData.job = job
-    end)
-    ```
+    ESX.PlayerData.job = job
+end)
+```
+</div>

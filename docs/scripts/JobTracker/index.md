@@ -1,8 +1,5 @@
----
-description: Dynamic blip syncing for jobs!
----
 
-# 🌐 JobTracker
+# :material-remote: JobTracker
 
 <div class="grid cards" markdown>
 - <center><span style="font-size: 32px;">[:shopping_cart: **Buy on Tebex**](https://kiminazes-script-gems.tebex.io/package/5436539)</span></center>

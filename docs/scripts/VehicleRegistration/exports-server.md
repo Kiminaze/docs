@@ -1,13 +1,14 @@
+
 # Exports (server)
 
 ## ChangePlate
 
-Returns the position of a single vehicle.
+Changes the license plate of a specified player vehicle similar to how the script itself does it.
 
 <font style="color:red;">**Parameters:**</font><br>
 **playerId** - `int` - The player id of the player that owns the vehicle.<br>
 **vehicleNetId** - `int` - The vehicle network id.<br>
-**newPlate** - `string` - The new license plate text of a vehicle.
+**newPlate** - `string` - The new license plate.
 
 <font style="color:green;">**Returns:**</font><br>
 `bool` - True on success.

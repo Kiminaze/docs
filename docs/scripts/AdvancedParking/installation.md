@@ -9,13 +9,13 @@
 
 ## Instructions
 
-1. Download the script from [Portal](https://portal.cfx.re/assets/created-assets) and extract it 
+1. Download the script from [Portal](https://portal.cfx.re/assets/granted-assets) and extract it 
    into your resources folder. (do _**not**_ use the experimental version unless you explicitly 
    want to)
 2. Make sure the resource name is `AdvancedParking`.
 3. Download and install OxMySQL (can be skipped if you are already using it).
-4. Download [kimi\_callbacks.zip](https://github.com/Kiminaze/kimi_callbacks/releases/latest) and 
-   extract it into your resources folder.
+4. Download [kimi_callbacks.zip](https://github.com/Kiminaze/kimi_callbacks/releases/latest/download/kimi_callbacks.zip) 
+   and extract it into your resources folder.
 5. Start the resource in your server.cfg:
     ```
     ensure AdvancedParking
@@ -25,8 +25,6 @@
 ***
 
 ### Deleting vehicles
-
-Usually you don´t need to use any of the provided "delete" exports!
 
 This fix should be added to your framework resource (`es_extended`, `qb-core`, etc) first and 
 foremost!
@@ -38,15 +36,18 @@ foremost!
 * Restart your server or refresh the resource list and restart the respective resource after adding 
   the line.
 
-!!! danger ""
-    <font style="color:#c9bb77;">:fontawesome-solid-exclamation-triangle:{ .youtube } If any other 
-    script does not delete a vehicle properly (it gets deleted but appears again) then repeat this 
-    step in the respective script.</font>
+Usually you don't need to use any of the provided "delete" exports!
 
-!!! info
-    There might be some scripts out there where this will _not_ work. If you find yourself in this 
-    situation, it might be best to simply ask for help in 
-    [our support](https://discord.kiminaze.de).
+<div class="infobox warning" markdown="1">
+If any other script does not delete a vehicle properly (it gets deleted but appears again) then 
+repeat this step in the respective script.
+</div>
+
+<div class="infobox info" markdown="1">
+There might be some scripts out there where this will _not_ work. If you find yourself in this 
+situation, it might be best to simply ask for help in 
+[our support](https://discord.kiminaze.de).
+</div>
 
 ***
 

@@ -28,7 +28,7 @@ Replace the `RegisterCommands` function with the following:
 
 ```lua
 function RegisterCommands()
-ESX.RegisterCommand(attachClampCommand, commandPermissions, function(xPlayer, args, showError)
+	ESX.RegisterCommand(attachClampCommand, commandPermissions, function(xPlayer, args, showError)
 		OnAttachClampCommand(xPlayer.source)
 	end, false, { help = "Attach a clamp to the closest vehicle wheel." })
 

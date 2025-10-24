@@ -1,26 +1,29 @@
-# Configurations
 
-## Cleanup settings { .purple-title }
+# Configuration
 
-The cleanup is a function for deleting vehicles from the world and the AP database, depending on your settings.
-The cleanup will be performed after a server or script restart if you set onScriptRestart = true and/or onServerStart = true.
-A cleanup will also be performed when you add times = {} in the config.
+## Cleanup settings
 
-It will not remove all data from the database and not all vehicles from the server.
-Only vehicles that match the cleanup config conditions will be removed.
+The cleanup is a function for deleting vehicles from the world and the AP database, depending on 
+your settings. The cleanup will be performed after a server or script restart if you set 
+`onScriptRestart = true` and/or `onServerStart = true`. A cleanup will also be performed when you 
+add times = {} in the config.
 
----
+It will not remove all data from the database and not all vehicles from the server. Only vehicles 
+that match the cleanup config conditions will be removed.
 
-### ThresholdTime { .purple-title }
+***
 
-The thresholdTime is just the holding time for a vehicle. It doesn't matter how often or when you perform a cleanup, it will not affect whether a cleanup occurs.
+### ThresholdTime
 
-As long as the thresholdTime is not nil, it will be checked during a cleanup.
-Every vehicle that is saved in AP will be checked against the thresholdTime.
-If a vehicle has been standing in the world without an update (entering or exiting the vehicle, taking damage, or being moved) for the time set as thresholdTime or longer, it will be cleaned up/removed.
+The thresholdTime is just the holding time for a vehicle. It doesn't matter how often or when you 
+perform a cleanup, it will not affect whether a cleanup occurs.
+
+As long as thresholdTime is not nil, it will be checked during a cleanup. Every vehicle that is 
+saved will be checked against the thresholdTime. If a vehicle has been standing in the world 
+without an update (e.g. enter/exit, damage taken etc) for a timeperiod equal or higher than 
+thresholdTime, it will be removed from the world.
 
 <div class="content-box">
-	<h2>Example</h2>
 	<div class="tabs">
       <div class="tab" data-tab="tab1">thresholdTime = nil</div>
       <div class="tab" data-tab="tab2">thresholdTime = 0</div>
@@ -51,18 +54,18 @@ If a vehicle has been standing in the world without an update (entering or exiti
     </div>
 </div>
 
----
+***
 
-### EngineThreshold { .purple-title }
+### EngineThreshold
 
-The engineThreshold is simply the minimum health required for a vehicle. It doesn't matter how often or when you perform a cleanup, it will not affect whether a cleanup occurs.
+The engineThreshold is simply the minimum health required for a vehicle.
 
-As long as the engineThreshold is not nil, it will be checked during a cleanup.
-Every vehicle will be checked for its engine health. If you set allVehicles = true, then all vehicles will be checked. Otherwise, only saved vehicles will be checked.
-All vehicles that have engine health equal to or below the engineThreshold value will be cleaned up/removed.
+As long as engineThreshold is not nil, it will be checked during a cleanup. Every saved vehicle 
+will be checked for its engine health. If you set allVehicles = true, then _all_ vehicles will be 
+checked. All vehicles that have engine health equal to or below the engineThreshold value will be 
+removed.
 
 <div class="content-box">
-	<h2>Example</h2>
 	<div class="tabs">
       <div class="tab" data-tab="tab4">engineThreshold = 700.0 and allVehicles = false</div>
       <div class="tab" data-tab="tab5">engineThreshold = 700.0 and allVehicles = true</div>
@@ -98,19 +101,18 @@ All vehicles that have engine health equal to or below the engineThreshold value
     </div>
 </div>
 
----
+***
 
-### DistanceThreshold { .purple-title }
+### DistanceThreshold
 
 The distanceThreshold is the minimum distance between player and vehicle.
-It doesn't matter how often or when you perform a cleanup, it will not affect whether a cleanup occurs.
 
-As long as the distanceThreshold is not nil, it will be checked during a cleanup.
-Every vehicle will be checked for its distance to a player. If you set allVehicles = true, all vehicles will be checked. Otherwise, only saved vehicles will be checked.
-All vehicles that are farther away from any player than the distanceThreshold will be removed.
+As long as distanceThreshold is not nil, it will be checked during a cleanup. Every saved vehicle 
+will be checked for its distance to the closest player. If you set allVehicles = true, _all_ 
+vehicles will be checked. Otherwise, only saved vehicles will be checked. All vehicles further away 
+from any player than the distanceThreshold will be removed.
 
 <div class="content-box">
-	<h2>Example</h2>
 	<div class="tabs">
       <div class="tab" data-tab="tab7">distanceThreshold = 100 and allVehicles = false</div>
       <div class="tab" data-tab="tab8">distanceThreshold = 100 and allVehicles = true</div>
@@ -146,32 +148,13 @@ All vehicles that are farther away from any player than the distanceThreshold wi
     </div>
 </div>
 
----
+***
 
-### SubmergedVehicles { .purple-title }
+### SubmergedVehicles
 
-The submergedVehicles setting determines whether vehicles submerged underwater will be removed when Ap is trying to respawn them. 
-It will not remove the vehicle on a cleanup.
-It doesn't matter how often or when you perform a cleanup; it will not affect whether a cleanup occurs.
+The submergedVehicles setting determines whether vehicles submerged underwater will be removed when 
+AP is trying to respawn them. It will not remove the vehicle on a cleanup.
 
 * If submergedVehicles = false, no submerged vehicles will be removed.
 * If submergedVehicles = true and allVehicles = false, only saved vehicles will be removed if they are submerged.
 * If submergedVehicles = true and allVehicles = true, all submerged vehicles will be removed.
-
-
-
-<script>
-    const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
-
-        tab.classList.add('active');
-        const contentId = tab.getAttribute('data-tab');
-        document.getElementById(contentId).classList.add('active');
-      });
-    });
-  </script>

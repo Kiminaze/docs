@@ -1,6 +1,3 @@
----
-description: Key management made easy!
----
 
 # 🔑 VehicleKeyChain
 

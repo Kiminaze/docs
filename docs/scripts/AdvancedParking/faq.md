@@ -8,7 +8,7 @@ description: Frequently Asked Questions
 ## Changing license plate text
 
 There are some minor problems when updating a vehicle's plate. In order to fix those, you will need 
-to **exchange** the function `SetVehicleNumberPlateText` with the following function:
+to **exchange** the function `SetVehicleNumberPlateText` with the following export:
 
 ```lua
 exports["AdvancedParking"]:UpdatePlate
@@ -21,6 +21,9 @@ SetVehicleNumberPlateText(vehicle, "TEST1234")
 -- into this:
 exports["AdvancedParking"]:UpdatePlate(vehicle, "TEST1234")
 ```
+
+In case of this being done on server side, you need to use the [server side export](exports-server.md#updateplate) 
+instead.
 
 ***
 
@@ -40,10 +43,14 @@ server.
 RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
     local playerId = source
     local citizenid = QBCore.Functions.GetPlayer(playerId).PlayerData.citizenid
-    exports.oxmysql:execute("SELECT `plate` FROM `player_vehicles` WHERE `citizenid` = ?", { citizenid }, function(result)
+    exports["oxmysql"]:execute([[
+        SELECT `plate` 
+            FROM `player_vehicles` 
+            WHERE `citizenid` = ?;
+    ]], { citizenid }, function(result)
         for i = 1, #result do
             local plate = result[i].plate
-            if not VehicleList[plate] then
+            if (not VehicleList[plate]) then
                 VehicleList[plate] = {}
             end
             VehicleList[plate][citizenid] = true
@@ -67,14 +74,17 @@ cannot (un)lock them.
 Add the following snippet at the bottom of the `sv_utils.lua` inside `okokGarage`.
 
 ```lua
-RegisterNetEvent('okok:server:CheckOwnerExt', function()
-    local src = source
-    local xPlayer = ESX.GetPlayerFromId(src)
-    local APExports = exports["AdvancedParking"]
-    MySQLfetchAll('SELECT owner, plate FROM owned_vehicles WHERE owner = ? OR owner = ?', {xPlayer.identifier, xPlayer.job.name}, function(result)
+RegisterNetEvent("okok:server:CheckOwnerExt", function()
+    local playerId = source
+    local xPlayer = ESX.GetPlayerFromId(playerId)
+    MySQLfetchAll([[
+        SELECT owner, plate 
+            FROM owned_vehicles 
+            WHERE owner = ? OR owner = ?;
+    ]], { xPlayer.identifier, xPlayer.job.name }, function(result)
         for i = 1, #result do
-            if (APExports:GetVehiclePosition(result[i].plate)) then
-                TriggerEvent('okokGarage:GiveKeys', result[i].plate, src)
+            if (exports["AdvancedParking"]:GetVehiclePosition(result[i].plate)) then
+                TriggerEvent("okokGarage:GiveKeys", result[i].plate, playerId)
             end
         end
     end)
@@ -84,8 +94,8 @@ end)
 And add the following snippet at the bottom of the `cl_utils.lua` inside `okokGarage`.
 
 ```lua
-AddEventHandler('esx:onPlayerSpawn', function()
-    TriggerServerEvent('okok:server:CheckOwnerExt')
+AddEventHandler("esx:onPlayerSpawn", function()
+    TriggerServerEvent("okok:server:CheckOwnerExt")
 end)
 ```
 
@@ -94,14 +104,17 @@ end)
 Add the following snippet at the bottom of the `sv_utils.lua` inside `okokGarage`.
 
 ```lua
-RegisterNetEvent('okok:server:CheckOwnerExt', function()
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    local APExports = exports["AdvancedParking"]
-    exports.oxmysql:execute('SELECT citizenid, plate FROM player_vehicles WHERE citizenid = ?', {Player.PlayerData.citizenid}, function(result)
+RegisterNetEvent("okok:server:CheckOwnerExt", function()
+    local playerId = source
+    local Player = QBCore.Functions.GetPlayer(playerId)
+    exports["oxmysql"]:execute([[
+        SELECT citizenid, plate 
+            FROM player_vehicles 
+            WHERE citizenid = ?;
+    ]], { Player.PlayerData.citizenid }, function(result)
         for i = 1, #result do
-            if (APExports:GetVehiclePosition(result[i].plate)) then
-                TriggerEvent('okokGarage:GiveKeys', result[i].plate, tonumber(src))
+            if (exports["AdvancedParking"]:GetVehiclePosition(result[i].plate)) then
+                TriggerEvent("okokGarage:GiveKeys", result[i].plate, tonumber(playerId))
             end
         end
     end)
@@ -111,8 +124,8 @@ end)
 And add the following snippet at the bottom of the `cl_utils.lua` inside `okokGarage`.
 
 ```lua
-AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
-    TriggerServerEvent('okok:server:CheckOwnerExt')
+AddEventHandler("QBCore:Client:OnPlayerLoaded", function()
+    TriggerServerEvent("okok:server:CheckOwnerExt")
 end)
 ```
 
@@ -129,8 +142,8 @@ out of a garage multiple times.
 
 Make sure to disable okokGarage's config option called: `Config.SetVehicleImpoundAfter`
 
-Then find the function `takeOutVehicle` inside okokGarage's sv\_utils.lua and add the following 
-code as the first line:
+Then find the function `takeOutVehicle` inside okokGarage's sv_utils.lua and add the following code 
+as the first line:
 
 ```lua
 if (exports["AdvancedParking"]:GetVehiclePosition(vehicle_plate)) then
@@ -158,18 +171,16 @@ function takeOutVehicle(db, _source, vehicle_plate, vehicle_id, index, vehicle_n
 
 <font style="color:red;">**Issue**</font>
 
-`cd_garage` uses a weird function to delete vehicles. Because of that, the 
-[usual fix](https://docs.kiminaze.de/scripts/advancedparking/installation#deleting-vehicles) will 
-not work for this script.
+`cd_garage` uses a sort of weird function to delete vehicles. Because of that, the 
+[usual fix](installation.md#deleting-vehicles) will not work for this script.
 
 <font style="color:green;">**Solution**</font>
 
-Make sure to disable cd\_garage's built-in persistence feature in their config.
+Make sure to disable cd_garage's built-in persistence feature in their config.
 
 Add a `Wait(1000)` in between lines 113/114 inside `AdvancedParking/client/client.lua`.
 
 <details>
-
 <summary>Should look like this:</summary>
 
 ```lua
@@ -262,23 +273,22 @@ vehicles after a server restart.
 
 <font style="color:green;">**Solution**</font>
 
-A slightly different version of 
-[this fix](https://docs.kiminaze.de/scripts/advancedparking/faq#qb-vehiclekeys). This should be 
-added at the bottom of `qb-vehiclekeys/server/main.lua`:
+A slightly different version of [this fix](#qb-vehiclekeys). This should be added at the bottom of 
+`qb-vehiclekeys/server/main.lua`:
 
 ```lua
 RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
     local playerId = source
     local playerData = QBCore.Functions.GetPlayer(playerId).PlayerData
     local citizenid = playerData.citizenid
-    local job = playerData.job.name
-    exports.oxmysql:execute("SELECT `plate` FROM `player_vehicles` WHERE `citizenid` = ? OR `citizenid` = ?;", {
-        citizenid,
-        job
-    }, function(result)
+    exports["oxmysql"]:execute([[
+        SELECT `plate` 
+            FROM `player_vehicles` 
+            WHERE `citizenid` = ? OR `citizenid` = ?;
+    ]], { citizenid, playerData.job.name }, function(result)
         for i = 1, #result do
             local plate = result[i].plate
-            if not VehicleList[plate] then
+            if (not VehicleList[plate]) then
                 VehicleList[plate] = {}
             end
             VehicleList[plate][citizenid] = true
@@ -295,8 +305,7 @@ end)
 <font style="color:red;">**Issue**</font>
 
 It uses a specific function to delete vehicles. Because of that, the 
-[usual fix](https://docs.kiminaze.de/scripts/advancedparking/installation#deleting-vehicles) will 
-not work for this script.
+[usual fix](installation.md#deleting-vehicles) will not work for this script.
 
 <font style="color:green;">**Solution**</font>
 
@@ -311,7 +320,6 @@ end
 ```
 
 <details>
-
 <summary>Should look like this:</summary>
 
 ```lua
@@ -351,7 +359,7 @@ end
 
 ***
 
-## Jaksam vehicle\_keys
+## Jaksam vehicle_keys
 
 <font style="color:red;">**Issue**</font>
 
@@ -372,9 +380,7 @@ And this to `AdvancedParking/server/sv_integrations.lua`:
 ```lua
 RegisterNetEvent("AP:checkKeys", function()
     local ESX = exports["es_extended"]:getSharedObject()
-    local AP = exports["AdvancedParking"]
-    local src = source
-    local playerData = ESX.GetPlayerFromId(src)
+    local playerData = ESX.GetPlayerFromId(source)
     local identifier = playerData.identifier
     local job = playerData.getJob().name
     exports["oxmysql"]:query([[
@@ -383,7 +389,7 @@ RegisterNetEvent("AP:checkKeys", function()
             WHERE `owner` = ? OR `owner` = ?;
     ]], { identifier, job }, function(results)
         for i, row in ipairs(results) do
-            if (AP:GetVehiclePosition(row.plate)) then
+            if (exports["AdvancedParking"]:GetVehiclePosition(row.plate)) then
                 exports["vehicles_keys"]:giveVehicleKeysToIdentifier(identifier, row.plate, "temporary")
             end
         end

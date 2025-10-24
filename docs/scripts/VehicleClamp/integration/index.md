@@ -1,6 +1,3 @@
----
-description: ... into different frameworks.
----
 
 # Integration
 
@@ -12,5 +9,5 @@ frameworks.
 
 ## Available frameworks
 
-* [ESX](./esx)
-* [QB](./qb)
+* [ESX](esx.md)
+* [QB](qb.md)

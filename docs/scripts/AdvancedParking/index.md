@@ -32,15 +32,14 @@ again.
 * Vehicles that have been saved are **completely dynamic**. They can be moved and take damage.
 * Vehicle spawning happens on server side.
 * Attached **trailers** will be saved automatically.
-* Option to **save only player owned vehicles** (requires **ESX** or **QB**).
+* Option to **save only player owned vehicles** (requires **ESX**, **QB**, **QBox** or **ox_core**).
 * **Cleanup function** takes care of vehicles that haven't been updated in a while.
   * Configurable time threshold.
-  * Option to send cleaned up vehicles to the player garage (requires **ESX** or **QB**).
+  * Option to send cleaned up vehicles to the player garage (requires **ESX**, **QB**, **QBox** or 
+    **ox_core**).
 * Non-networked (or client side only) vehicles will be ignored.
 * Can be restarted any time.
-* Several [**Exports**](https://docs.kiminaze.de/scripts/advancedparking/exports-server) and 
-  [**Events**](https://docs.kiminaze.de/scripts/advancedparking/server-events) to extend 
-  functionality in your own scripts.
+* Several **exports** and **events** to extend functionality in your own scripts.
 
 ## Saved Values
 

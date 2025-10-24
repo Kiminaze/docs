@@ -7,12 +7,12 @@ Starts the orbit camera.
 
 <font style="color:red;">**Parameters:**</font><br>
 **position** - `vector3` - Initial position to focus on.<br>
-**entity** - `integer?` - Entity to track. If set, **position** will be the offset to the entity.<br>
-**minRadius** - `float?` - Minimum radius the camera will orbit at.<br>
-**maxRadius** - `float?` - Maximum radius the camera will orbit at.<br>
-**transitionSpeed** - `float?` - Time it takes for the transition from gameplay cam to orbit cam 
+**entity?** - `integer` - Entity to track. If set, **position** will be the offset to the entity.<br>
+**minRadius?** - `float` - Minimum radius the camera will orbit at.<br>
+**maxRadius?** - `float` - Maximum radius the camera will orbit at.<br>
+**transitionSpeed?** - `float` - Time it takes for the transition from gameplay cam to orbit cam 
 (in ms).<br>
-**entityBone** - `integer?` - Bone to track. If set, **position** will be the offset to the bone.
+**entityBone?** - `integer` - Bone to track. If set, **position** will be the offset to the bone.
 
 ```lua
 local offset = vector3(0, 0, 0.5)
@@ -22,7 +22,7 @@ exports["OrbitCam"]:StartOrbitCam(offset, entity)
 
 ***
 
-## EndOrbitCam()
+## EndOrbitCam
 
 Stops the orbit camera.
 
@@ -38,10 +38,10 @@ Sets the camera focus to a different position (or updates other values).
 
 <font style="color:red;">**Parameters:**</font><br>
 **position** - `vector3` - Position to focus on.<br>
-**entity** - `integer?` - Entity to track. If set, **position** will be the offset to the entity.<br>
-**minRadius** - `float?` - Minimum radius the camera will orbit at.<br>
-**maxRadius** - `float?` - Maximum radius the camera will orbit at.<br>
-**entityBone** - `integer?` - Bone to track. If set, **position** will be the offset to the bone.
+**entity?** - `integer` - Entity to track. If set, **position** will be the offset to the entity.<br>
+**minRadius?** - `float` - Minimum radius the camera will orbit at.<br>
+**maxRadius?** - `float` - Maximum radius the camera will orbit at.<br>
+**entityBone?** - `integer` - Bone to track. If set, **position** will be the offset to the bone.
 
 ```lua
 local newOffset = vector3(0.5, 0.5, 1.0)
@@ -56,8 +56,8 @@ exports["OrbitCam"]:UpdateCamPosition(newOffset, entity)
 Sets the camera focus to a different position (or updates other values).
 
 <font style="color:red;">**Parameters:**</font><br>
-**speed** - `float?` - Speed at which the camera should orbit. Set to `nil` to reset.<br>
-**disablePlayerControls** - `boolean?` - If player controls should be disabled.
+**speed?** - `float` - Speed at which the camera should orbit. Set to `nil` to reset.<br>
+**disablePlayerControls?** - `boolean` - If player controls should be disabled.
 
 ```lua
 exports["OrbitCam"]:SetAutoOrbitSpeed(2.0, true)
@@ -65,7 +65,7 @@ exports["OrbitCam"]:SetAutoOrbitSpeed(2.0, true)
 
 ***
 
-## IsOrbitCamActive()
+## IsOrbitCamActive
 
 Check if the orbit cam is currently active.
 
@@ -78,12 +78,12 @@ local isCamActive = exports["OrbitCam"]:IsOrbitCamActive()
 
 ***
 
-## IsEntityBeingTracked(entity)
+## IsEntityBeingTracked
 
 Checks if an entity is being tracked. Omitting **entity** parameter checks for any entity.
 
 <font style="color:red;">**Parameters:**</font><br>
-**entity** - `integer?` - Entity to check.
+**entity?** - `integer` - Entity to check.
 
 <font style="color:green;">**Returns:**</font><br>
 `bool` - If the/any entity is being tracked.
@@ -94,7 +94,7 @@ local isTrackingPlayer = exports["OrbitCam"]:IsEntityBeingTracked(PlayerPedId())
 
 ***
 
-## GetTrackedEntity()
+## GetTrackedEntity
 
 Returns the currently tracked entity.
 

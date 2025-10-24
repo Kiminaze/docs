@@ -3,8 +3,8 @@
 
 ## [DEPRECATED]
 
-Please check out the new [OrbitCam](https://docs.kiminaze.de/free-scripts/orbitcam) that allows for 
-much more customizability and does the exact same thing but better!
+Please check out the new [OrbitCam](../orbitcam/index.md) that allows for much more customizability 
+and does the exact same thing but better!
 
 <div class="grid cards" markdown>
 - <center><span style="font-size: 32px;">[:simple-github:{ .github } **GitHub**](https://github.com/Kiminaze/OrbitCam)</span></center>

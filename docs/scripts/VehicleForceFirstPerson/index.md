@@ -1,6 +1,3 @@
----
-description: Everyone gets first person view!
----
 
 # 🕵️‍♂️ VehicleForceFirstPerson
 

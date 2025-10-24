@@ -1,8 +1,4 @@
 
----
-description: Track all your owned vehicles!
----
-
 # 🗺️ VehicleTracker
 
 <div class="grid cards" markdown>

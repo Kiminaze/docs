@@ -1,11 +1,5 @@
----
-description: Immobilize vehicles using a real clamp!
----
 
 # 🗜️ VehicleClamp - Pre-Release
-
-* :shopping\_cart: [**Buy on Tebex**](https://kiminazes-script-gems.tebex.io/package/6196972)
-* Forum topic **- TBD**
 
 <div class="grid cards" markdown>
 - <center><span style="font-size: 32px;">[:shopping_cart: **Buy on Tebex**](https://kiminazes-script-gems.tebex.io/package/6196972)</span></center>
@@ -16,29 +10,28 @@ description: Immobilize vehicles using a real clamp!
 
 VehicleClamp allows you to attach wheel clamps to most ground vehicles. The clamps can be attached 
 and detached by using the appropriate item or options can be added to e.g. your job menus or other 
-systems by using the available [client](https://docs.kiminaze.de/scripts/vehicleclamp/exports-client) 
-and [server](https://docs.kiminaze.de/scripts/vehicleclamp/exports-server) exports. A chat command 
-is available for admins and other staff.
+systems by using the available [client](exports-client.md) and [server](exports-server.md) exports. 
+A chat command is available for admins and other staff.
 
 Just be close to the wheel you want to clamp. Use the item or your own implementation to attach it. 
 Once attached you can still start the engine but the vehicle can't be driven anymore. The vehicle 
 can still be moved by external force though, it is not frozen in place.
 
 This script can be used as a standalone resource or together with your favorite framework. Check 
-[Integration](https://docs.kiminaze.de/scripts/vehicleclamp/integration) for more information.
+[Integration](integration/index.md) for more information.
 
 <div class="youtube-placeholder" data-videotitle="VehicleClamp Showcase" data-videoid="VXVS8j6wBuE"></div>
 
-## <mark style="color:red;">**What does Pre-Release mean?**</mark>
+## What does Pre-Release mean?
 
 * This resource is not 100% complete and will be developed over time.
 * During this period, customer feedback is highly encouraged.
-* Discount for early customers.
+* Discount for customers.
 * What's missing in this resource?
   * Additional 3D model for smaller/bigger wheels than average.
   * Attaching a clamp to inset rims can lead to the clamp clipping slightly into the wheel (only 
-    visual)
-  * Clamp model sometimes appears flipped 180° (only visual)
+    visual problem).
+  * Clamp model sometimes appears flipped 180° (only visual problem).
 
 ## Features
 

@@ -1,8 +1,4 @@
 
----
-description: Plate changer with history!
----
-
 # 📄 VehicleRegistration
 
 <div class="grid cards" markdown>

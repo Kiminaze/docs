@@ -1,8 +1,4 @@
 
----
-description: The dynamic vehicle transportation experience!
----
-
 # 🚚 VehicleTransport
 
 <div class="grid cards" markdown>
@@ -19,7 +15,7 @@ be attached at any time and it is fully multiplayer compatible!
 
 ## Features
 
-* By default \~20 vehicles are defined as transport vehicles (flatbed, trflat, benson, mule, mule2, 
+* By default ~20 vehicles are defined as transport vehicles (flatbed, trflat, benson, mule, mule2, 
   mule3, mule4, pounder, pounder2, skylift, titan, cargoplane, wastelander, armytrailer, 
   boattrailer, freighttrailer, avenger, avenger2, slamtruck).
 * No commands needed for playing! Everything can be done **ingame**!

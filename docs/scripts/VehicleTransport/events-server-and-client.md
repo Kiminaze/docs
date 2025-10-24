@@ -1,6 +1,3 @@
----
-description: These events are executed on server and client side.
----
 
 # Events (server & client)
 
@@ -23,8 +20,6 @@ AddEventHandler("VT:vehicleAttached", function(vehicleNetworkId, transportNetwor
     print(GetVehicleNumberPlateText(vehicle) .. " was attached to " .. GetVehicleNumberPlateText(transportVehicle))
 end)
 ```
-
-
 
 ***
 

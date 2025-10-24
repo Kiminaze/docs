@@ -1,3 +1,4 @@
+
 # Exports (server)
 
 ## AddKey
@@ -490,7 +491,8 @@ end
 
 ## GetPlayerVehiclesAndKeys
 
-Returns both the results from [GetPlayerVehicles](https://docs.kiminaze.de/scripts/vehiclekeychain/exports-server#getplayervehicles-playerid) and [GetPlayerKeys](https://docs.kiminaze.de/scripts/vehiclekeychain/exports-server#getplayerkeys-playerid).
+Returns both the results from [GetPlayerVehicles](#getplayervehicles) and 
+[GetPlayerKeys](#getplayerkeys).
 
 <font style="color:red;">**Parameters:**</font><br>
 **playerId** - `int` - The server side id of the player.

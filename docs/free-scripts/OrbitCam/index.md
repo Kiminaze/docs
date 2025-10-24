@@ -37,5 +37,5 @@ given point/entity/bone.
 
 * Client side:
   * Idle: 0.00ms
-  * Active camera: \~0.07ms
+  * Active camera: ~0.07ms
 * Server side: 0.00ms

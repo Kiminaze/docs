@@ -6,9 +6,9 @@
 - <center><span style="font-size: 32px;">[:custom-icons8-fivem: Forum topic](https://forum.cfx.re/t/cinematic-cam-camera-for-flying-around-and-attaching-to-entities/194753)</span></center>
 </div>
 
-<br>
+***
 
-## Description { .purple-title }
+## Description
 
 The CinematicCam provides the user with an easy to use “additional” camera, that can be moved 
 freely in the world. Additionally it can be attached to any npc/player/vehicle in the game in order 
@@ -18,9 +18,9 @@ entity.
 
 <div class="youtube-placeholder" data-videotitle="CinematicCam Showcase" data-videoid="TWoOjqfDeng"></div>
 
-<br>
+***
 
-## Features { .purple-title }
+## Features
 
 * Complete control using NativeUILua by Frazzle ([NativeUILua](https://github.com/FrazzIe/NativeUILua/archive/refs/heads/master.zip)).
 * Toggle the camera on / off.

@@ -1,7 +1,7 @@
 
 # Exports (client)
 
-## GetVehicleDeformation(vehicle)
+## GetVehicleDeformation
 
 Gets the vehicles deformation in a table.
 
@@ -12,9 +12,13 @@ Gets the vehicles deformation in a table.
 `table<table<offset: vector3, damage: number>>` - List of offsets from the vehicle and the relative 
 damage.
 
+```lua
+local deformation = exports["VehicleDeformation"]:GetVehicleDeformation(vehicle)
+```
+
 ***
 
-## SetVehicleDeformation(vehicle, deformation)
+## SetVehicleDeformation
 
 Sets the deformation on a vehicle.
 
@@ -22,18 +26,26 @@ Sets the deformation on a vehicle.
 **vehicle** - `number` - The handle of the vehicle.<br>
 **deformation** - `table<table<offset: vector3, damage: vector3>>` - The deformation values.
 
+```lua
+exports["VehicleDeformation"]:GetVehicleDeformation(vehicle, deformation)
+```
+
 ***
 
-## FixVehicleDeformation(vehicle)
+## FixVehicleDeformation
 
 Fixes the deformation of a vehicle.
 
 <font style="color:red;">**Parameters:**</font><br>
 **vehicle** - `number` - The handle of the vehicle.
 
+```lua
+exports["VehicleDeformation"]:FixVehicleDeformation(vehicle)
+```
+
 ***
 
-## IsDeformationWorse(firstDeformation, secondDeformation)
+## IsDeformationWorse
 
 Compares both deformation tables and returns if the first one is worse than the second.
 
@@ -46,9 +58,13 @@ table.
 <font style="color:green;">**Returns:**</font><br>
 `bool` - True if the first deformation is worse than the second one.
 
+```lua
+local isWorse = exports["VehicleDeformation"]:IsDeformationWorse(firstDeformation, secondDeformation)
+```
+
 ***
 
-## IsDeformationEqual(firstDeformation, secondDeformation)
+## IsDeformationEqual
 
 Compares both deformation tables and returns if they are equal.
 
@@ -61,6 +77,10 @@ table.
 <font style="color:green;">**Returns:**</font><br>
 `bool` - True if both deformation tables are equal.
 
+```lua
+local isWorse = exports["VehicleDeformation"]:IsDeformationEqual(firstDeformation, secondDeformation)
+```
+
 ***
 
 ## GetDeformationOffsets(vehicle)
@@ -72,3 +92,7 @@ Returns all offsets for a specified vehicle
 
 <font style="color:green;">**Returns:**</font><br>
 `table<vector3>` - A table containing all offsets around a vehicle.
+
+```lua
+local offsets = exports["VehicleDeformation"]:GetDeformationOffsets(vehicle)
+```

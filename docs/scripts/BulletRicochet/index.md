@@ -1,3 +1,4 @@
+
 ---
 description: Be mindful where your shots land!
 ---

@@ -28,75 +28,17 @@ exports["AdvancedParking"]:UpdateVehicle(vehicle)
 
 ***
 
-## UpdatePlate
-
-Updates a plate in AdvancedParking's data. This is necessary when changing a **saved** vehicle's 
-plate so that it doesn't get caught by one of the error protection systems.
-
-<font style="color:red;">**Parameters:**</font><br>
-**vehicle** - `int` - Valid vehicle handle.<br>
-**newPlate** - `string` - The new plate to set.
-
-```lua
-exports["AdvancedParking"]:UpdatePlate(vehicle, newPlate)
-```
-
-***
-
-## GetVehiclePosition
-
-Returns the position of a single vehicle. If vehicle is present on client side this will get the 
-position directly. If not present, it will check server side similar to the server side export.
-
-<font style="color:red;">**Parameters:**</font><br>
-**plate** - `string` - The license plate text of a vehicle.
-
-<font style="color:green;">**Returns:**</font><br>
-`vector3?` - The position of the vehicle or nil.
-
-```lua
-local position = exports["AdvancedParking"]:GetVehiclePosition(plate)
-```
-
-***
-
-## GetVehiclePositions
-
-Returns the positions of several given vehicles. If vehicle is present on client side this will get 
-the position directly. If not present, it will check server side similar to the server side export.
-
-<font style="color:red;">**Parameters:**</font><br>
-**plates** - `table<string>` - Table containing license plates (not case sensitive) (checks full 
-plate and trimmed plate).
-
-<font style="color:green;">**Returns:**</font><br>
-`dictionary<string, vector3>` - The positions of the vehicles. Can be empty if none was found.
-
-```lua
-local plateList = { plate1, plate2, plate3 }
-local positions = exports["AdvancedParking"]:GetVehiclePositions(plateList)
-for plate, position in pairs(positions) do
-    print(plate, tostring(position))
-end
-```
-
-
-
-***
-
 ## DeleteVehicle
 
-Deletes a vehicle from the world and the internal table so that it doesn't respawn.
+Deletes a vehicle from the world and the internal data so that it doesn't respawn.
 
 <font style="color:red;">**Parameters:**</font><br>
 **vehicle** - `int` - The vehicle to delete.<br>
 **keepInWorld?** - `bool` - If the vehicle should stay in the world.
 
 ```lua
-exports["AdvancedParking"]:DeleteVehicle(vehicle, false)
+exports["AdvancedParking"]:DeleteVehicle(vehicle)
 ```
-
-
 
 ***
 
@@ -116,10 +58,65 @@ local identifier = Entity(vehicle).state.ap_id
 local networkId = NetworkGetNetworkIdFromEntity(vehicle)
 local plate = GetVehicleNumberPlateText(vehicle)
 
-exports["AdvancedParking"]:DeleteVehicleOnServer(identifier, networkId, plate, true)
+exports["AdvancedParking"]:DeleteVehicleOnServer(identifier, networkId, plate)
 ```
 
+***
 
+## GetVehiclePosition
+
+Returns the position of a single vehicle. If vehicle is present on client side this will get the 
+position directly. If not present, it will check server side similar to the 
+[server side export](exports-server.md#getvehicleposition).
+
+<font style="color:red;">**Parameters:**</font><br>
+**plate** - `string` - The license plate text of a vehicle.
+
+<font style="color:green;">**Returns:**</font><br>
+`vector3?` - The position of the vehicle or nil.
+
+```lua
+local position = exports["AdvancedParking"]:GetVehiclePosition(plate)
+```
+
+***
+
+## GetVehiclePositions
+
+Returns the positions of several given vehicles. If vehicle is present on client side this will get 
+the position directly. If not present, it will check server side similar to the 
+[server side export](exports-server.md#getvehiclepositions).
+
+<font style="color:red;">**Parameters:**</font><br>
+**plates** - `table<string>` - Table containing license plates (not case sensitive) (checks full 
+plate and trimmed plate).
+
+<font style="color:green;">**Returns:**</font><br>
+`dictionary<string, vector3>` - The positions of the vehicles. Can be empty if none was found.
+
+```lua
+local plateList = { plate1, plate2, plate3 }
+local positions = exports["AdvancedParking"]:GetVehiclePositions(plateList)
+for plate, position in pairs(positions) do
+    print(plate, tostring(position))
+end
+```
+
+***
+
+## UpdatePlate
+
+Updates a plate in AdvancedParking's data. This is necessary when changing a **saved** vehicle's 
+plate so that it doesn't get caught by one of the error protection systems. Ideally this should 
+_replace_ calls to `SetVehicleNumberPlateText`.l
+
+<font style="color:red;">**Parameters:**</font><br>
+**vehicle** - `int` - Valid vehicle handle.<br>
+**newPlate** - `string` - The new plate to set.
+
+```lua
+exports["AdvancedParking"]:UpdatePlate(vehicle, newPlate)
+```
 
 ***
 

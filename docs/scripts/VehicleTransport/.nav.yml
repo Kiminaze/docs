@@ -4,4 +4,4 @@ nav:
   - "installation.md"
   - "exports-client.md"
   - "events-server-and-client.md"
-  - "creating-a-new-transport.md.md"
+  - "creating-a-new-transport.md"

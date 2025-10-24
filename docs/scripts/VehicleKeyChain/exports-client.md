@@ -16,7 +16,8 @@ exports["VehicleKeyChain"]:OpenInventory()
 Returns a list containing all player keys.
 
 <font style="color:green;">**Returns:**</font><br>
-`table<table<plate: string, count: int, model: int>>` - List of keys with their plate, count and associated model.
+`table<table<plate: string, count: int, model: int>>` - List of keys with their plate, count and 
+associated model.
 
 ```lua
 local keys = exports["VehicleKeyChain"]:GetPlayerKeys()
