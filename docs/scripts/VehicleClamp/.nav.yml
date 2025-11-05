@@ -1,8 +1,0 @@
-
-nav:
-  - "index.md"
-  - "installation.md"
-  - "commands.md"
-  - "exports-server.md"
-  - "exports-client.md"
-  - "integration"
