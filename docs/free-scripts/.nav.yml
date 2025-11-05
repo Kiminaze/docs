@@ -1,0 +1,8 @@
+
+nav:
+  - CinematicCam: "cinematiccam"
+  - DeathCam: "deathcam"
+  - EarthquakeSimulator: "earthquakesimulator"
+  - kimi_callbacks: "kimi_callbacks"
+  - OrbitCam: "orbitcam"
+  - VehicleDeformation: "vehicledeformation"

@@ -59,6 +59,7 @@ validation:
 
 extra_javascript:
   - javascripts/yt_replace.js
+  - javascripts/tabbox.js
 
 extra_css:
   - stylesheets/extra.css

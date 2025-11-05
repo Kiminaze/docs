@@ -1,0 +1,12 @@
+
+nav:
+  - AdvancedParking: "advancedparking"
+  - BulletRicochet: "bulletricochet"
+  - JobTracker: "jobtracker"
+  - VehicleClamp: "vehicleclamp"
+  - VehicleForceFirstPerson: "vehicleforcefirstperson"
+  - VehicleInteraction: "vehicleinteraction"
+  - VehicleKeyChain: "vehiclekeychain"
+  - VehicleRegistration: "vehicleregistration"
+  - VehicleTracker: "vehicletracker"
+  - VehicleTransport: "vehicletransport"

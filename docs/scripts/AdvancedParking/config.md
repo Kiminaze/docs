@@ -23,35 +23,34 @@ saved will be checked against the thresholdTime. If a vehicle has been standing 
 without an update (e.g. enter/exit, damage taken etc) for a timeperiod equal or higher than 
 thresholdTime, it will be removed from the world.
 
-<div class="content-box">
-	<div class="tabs">
-      <div class="tab" data-tab="tab1">thresholdTime = nil</div>
-      <div class="tab" data-tab="tab2">thresholdTime = 0</div>
-      <div class="tab" data-tab="tab3">thresholdTime = 6</div>
-    </div>
+<div class="content-box" markdown="1">
+<div class="tabs">
+<div class="tab">thresholdTime = nil</div>
+<div class="tab">thresholdTime = 0</div>
+<div class="tab">thresholdTime = 6</div>
+</div>
 
-    <div class="tab-content" id="tab1">
-      <p>Server restarts at 00:00 o'clock, and cleanup is activated at server start.<br>
-        Vehicle A was last updated at 23:00 o'clock.<br>
-        Vehicle B was last updated at 14:00 o'clock.<br>
-        <br>
-        <b>Solution</b>: Vehicle A and B will not be removed and will remain in the AP database.</p>
-    </div>
-    <div class="tab-content" id="tab2">
-      <p>Server restarts at 00:00 o'clock, and cleanup is activated at server start.<br>
-        Vehicle A was last updated at 23:00 o'clock.<br>
-        Vehicle B was last updated at 14:00 o'clock.<br>
-        <br>
-        <b>Solution</b>: Both vehicles will be removed.</p>
-    </div>
-    <div class="tab-content" id="tab3">
-      <p>Server restarts at 00:00 o'clock, and cleanup is activated at server start.<br>
-        Vehicle A was last updated at 23:00 o'clock.<br>
-        Vehicle B was last updated at 14:00 o'clock.<br>
-        <br>
-        <b>Solution</b>: Vehicle B will be removed, as it has been standing longer than 6 hours (thresholdTime) in the world.
-        Vehicle A will stay, as its last update was less than 6 hours ago (thresholdTime).</p>
-    </div>
+<div class="tab-content" markdown="1">
+* Server restarts at midnight and cleanup is activated on server start.
+* Vehicle A was last updated at 11 p.m.
+* Vehicle B was last updated at 2 p.m.
+
+**Result:** Vehicle A and B will not be removed and will remain saved.
+</div>
+<div class="tab-content" markdown="1">
+* Server restarts at midnight and cleanup is activated on server start.
+* Vehicle A was last updated at 11 p.m.
+* Vehicle B was last updated at 2 p.m.
+
+**Result:** Both vehicles will be removed.
+</div>
+<div class="tab-content" markdown="1">
+* Server restarts at midnight and cleanup is activated on server start.
+* Vehicle A was last updated at 11 p.m.
+* Vehicle B was last updated at 2 p.m.
+
+**Result:** Only vehicle B will be removed as it has not been updated for the past 6 hours.
+</div>
 </div>
 
 ***
@@ -65,40 +64,40 @@ will be checked for its engine health. If you set allVehicles = true, then _all_
 checked. All vehicles that have engine health equal to or below the engineThreshold value will be 
 removed.
 
-<div class="content-box">
-	<div class="tabs">
-      <div class="tab" data-tab="tab4">engineThreshold = 700.0 and allVehicles = false</div>
-      <div class="tab" data-tab="tab5">engineThreshold = 700.0 and allVehicles = true</div>
-      <div class="tab" data-tab="tab6">engineThreshold = nil and allVehicles = true or false</div>
-    </div>
+<div class="content-box" markdown="1">
+<div class="tabs">
+<div class="tab">engineThreshold = 700.0 and allVehicles = false</div>
+<div class="tab">engineThreshold = 700.0 and allVehicles = true</div>
+<div class="tab">engineThreshold = nil and allVehicles = true or false</div>
+</div>
 
-    <div class="tab-content" id="tab4">
-      <p>Server restarts and cleanup is activated at server start.<br>
-        Vehicle A has 900 engine health and is not saved.<br>
-        Vehicle B has 960 engine health and is saved.<br>
-        Vehicle C has 450 engine health and is not saved.<br>
-        Vehicle D has 560 engine health and is saved.<br>
-        <br>
-        <b>Solution</b>:  Vehicle A will stay.  Vehicle B will stay.  Vehicle C will stay.  Vehicle D will be removed.</p>
-    </div>
-    <div class="tab-content" id="tab5">
-      <p>Server restarts and cleanup is activated at server start.<br>
-        Vehicle A has 900 engine health and is not saved.<br>
-        Vehicle B has 960 engine health and is saved.<br>
-        Vehicle C has 450 engine health and is not saved.<br>
-        Vehicle D has 560 engine health and is saved.<br>
-        <br>
-        <b>Solution</b>:  Vehicle A will stay.  Vehicle B will stay.  Vehicle C will be removed.  Vehicle D will be removed.</p>
-    </div>
-    <div class="tab-content" id="tab6">
-      <p>Server restarts and cleanup is activated at server start.<br>
-        Vehicle A has 900 engine health and is not saved.<br>
-        Vehicle B has 960 engine health and is saved.<br>
-        Vehicle C has 450 engine health and is not saved.<br>
-        Vehicle D has 560 engine health and is saved.<br>
-        <br>
-        <b>Solution</b>:  Vehicle A will stay.  Vehicle B will stay.  Vehicle C will stay.  Vehicle D will stay.</p>
-    </div>
+<div class="tab-content" markdown="1">
+* Server restarts and cleanup is activated at server start.
+* Vehicle A has 900 engine health and is not saved.
+* Vehicle B has 960 engine health and is saved.
+* Vehicle C has 450 engine health and is not saved.
+* Vehicle D has 560 engine health and is saved.
+
+**Result:** Vehicle A will stay.  Vehicle B will stay.  Vehicle C will stay.  Vehicle D will be removed.
+</div>
+<div class="tab-content" markdown="1">
+* Server restarts and cleanup is activated at server start.
+* Vehicle A has 900 engine health and is not saved.
+* Vehicle B has 960 engine health and is saved.
+* Vehicle C has 450 engine health and is not saved.
+* Vehicle D has 560 engine health and is saved.
+
+**Result:** Vehicle A will stay.  Vehicle B will stay.  Vehicle C will be removed.  Vehicle D will be removed.
+</div>
+<div class="tab-content" markdown="1">
+* Server restarts and cleanup is activated at server start.
+* Vehicle A has 900 engine health and is not saved.
+* Vehicle B has 960 engine health and is saved.
+* Vehicle C has 450 engine health and is not saved.
+* Vehicle D has 560 engine health and is saved.
+
+**Result:** Vehicle A will stay.  Vehicle B will stay.  Vehicle C will stay.  Vehicle D will stay.
+</div>
 </div>
 
 ***
@@ -112,40 +111,40 @@ will be checked for its distance to the closest player. If you set allVehicles =
 vehicles will be checked. Otherwise, only saved vehicles will be checked. All vehicles further away 
 from any player than the distanceThreshold will be removed.
 
-<div class="content-box">
-	<div class="tabs">
-      <div class="tab" data-tab="tab7">distanceThreshold = 100 and allVehicles = false</div>
-      <div class="tab" data-tab="tab8">distanceThreshold = 100 and allVehicles = true</div>
-      <div class="tab" data-tab="tab9">distanceThreshold = nil and allVehicles = true or false</div>
-    </div>
+<div class="content-box" markdown="1">
+<div class="tabs">
+<div class="tab">distanceThreshold = 100 and allVehicles = false</div>
+<div class="tab">distanceThreshold = 100 and allVehicles = true</div>
+<div class="tab">distanceThreshold = nil and allVehicles = true or false</div>
+</div>
 
-    <div class="tab-content" id="tab7">
-      <p>Server restarts and cleanup is activated at server start.<br>
-        Vehicle A is 200 meters away from a player and is not saved.<br>
-        Vehicle B is 300 meters away from a player and is saved.<br>
-        Vehicle C is 90 meters away from a player and is not saved.<br>
-        Vehicle D is 80 meters away from a player and is saved.<br>
-        <br>
-        <b>Solution</b>:  Vehicle A will stay.  Vehicle B will be removed.  Vehicle C will stay.  Vehicle D will stay.</p>
-    </div>
-    <div class="tab-content" id="tab8">
-      <p>Server restarts and cleanup is activated at server start.<br>
-        Vehicle A is 200 meters away from a player and is not saved.<br>
-        Vehicle B is 300 meters away from a player and is saved.<br>
-        Vehicle C is 90 meters away from a player and is not saved.<br>
-        Vehicle D is 80 meters away from a player and is saved.<br>
-        <br>
-        <b>Solution</b>:  Vehicle A will be removed.  Vehicle B will be removed.  Vehicle C will stay.  Vehicle D will stay.</p>
-    </div>
-    <div class="tab-content" id="tab9">
-      <p>Server restarts and cleanup is activated at server start.<br>
-        Vehicle A is 200 meters away from a player and is not saved.<br>
-        Vehicle B is 300 meters away from a player and is saved.<br>
-        Vehicle C is 90 meters away from a player and is not saved.<br>
-        Vehicle D is 80 meters away from a player and is saved.<br>
-        <br>
-        <b>Solution</b>:  Vehicle A will stay.  Vehicle B will stay.  Vehicle C will stay.  Vehicle D will stay.</p>
-    </div>
+<div class="tab-content" markdown="1">
+* Server restarts and cleanup is activated at server start.
+* Vehicle A is 200 meters away from a player and is not saved.
+* Vehicle B is 300 meters away from a player and is saved.
+* Vehicle C is 90 meters away from a player and is not saved.
+* Vehicle D is 80 meters away from a player and is saved.
+
+**Result:** Vehicle A will stay.  Vehicle B will be removed.  Vehicle C will stay.  Vehicle D will stay.
+</div>
+<div class="tab-content" markdown="1">
+* Server restarts and cleanup is activated at server start.
+* Vehicle A is 200 meters away from a player and is not saved.
+* Vehicle B is 300 meters away from a player and is saved.
+* Vehicle C is 90 meters away from a player and is not saved.
+* Vehicle D is 80 meters away from a player and is saved.
+
+**Result:** Vehicle A will be removed.  Vehicle B will be removed.  Vehicle C will stay.  Vehicle D will stay.
+</div>
+<div class="tab-content" markdown="1">
+* Server restarts and cleanup is activated at server start.
+* Vehicle A is 200 meters away from a player and is not saved.
+* Vehicle B is 300 meters away from a player and is saved.
+* Vehicle C is 90 meters away from a player and is not saved.
+* Vehicle D is 80 meters away from a player and is saved.
+
+**Result:** Vehicle A will stay.  Vehicle B will stay.  Vehicle C will stay.  Vehicle D will stay.
+</div>
 </div>
 
 ***
