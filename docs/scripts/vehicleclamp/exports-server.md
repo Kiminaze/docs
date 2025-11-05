@@ -1,0 +1,140 @@
+
+# Exports (server)
+
+## AttachClamp
+
+Attaches a clamp directly to the specified vehicle's wheel bone.
+
+<font style="color:red;">**Parameters:**</font><br>
+**vehicle** - `int` - The handle of the vehicle to check.<br>
+**wheelBone** - `string` - The name of the wheel bone.
+
+```lua
+exports["VehicleClamp"]:AttachClamp(vehicle, wheelBone)
+```
+
+***
+
+## RemoveClamp
+
+Removes a clamp directly from the specified vehicle's wheel bone.
+
+<font style="color:red;">**Parameters:**</font><br>
+**vehicle** - `int` - The handle of the vehicle to check.<br>
+wheelBone - string - The name of the wheel bone.
+
+```lua
+exports["VehicleClamp"]:RemoveClamp(vehicle, wheelBone)
+```
+
+***
+
+## StartClampingProcess
+
+Starts looking for the closest vehicle wheel. If one is found the player character will move 
+towards it and start the animation to attach the clamp.
+
+If items are set up in the config, requires the `clampItemName` item and removes it upon successful 
+use.
+
+<font style="color:red;">**Parameters:**</font><br>
+**playerId** - `int` - The id of the player.
+
+```lua
+exports["VehicleClamp"]:StartClampingProcess(playerId)
+```
+
+***
+
+## StartRemovalProcess
+
+Starts looking for the closest vehicle wheel. If one is found and it has a clamp the player 
+character will move towards it and start the animation to remove the clamp.
+
+If items are set up in the config, requires the `removalToolItemName` and adds a `clampItemName` to 
+the player's inventory.
+
+<font style="color:red;">**Parameters:**</font><br>
+**playerId** - `int` - The id of the player.
+
+```lua
+exports["VehicleClamp"]:StartRemovalProcess(playerId)
+```
+
+***
+
+## StartDestructionProcess
+
+Starts looking for the closest vehicle wheel. If one is found and it has a clamp the player 
+character will move towards it and start the animation to destroy the clamp.
+
+If items are set up in the config, requires the `destroyItemName`.
+
+<font style="color:red;">**Parameters:**</font><br>
+**playerId** - `int` - The id of the player.
+
+```lua
+exports["VehicleClamp"]:StartDestructionProcess(playerId)
+```
+
+***
+
+## IsAnyWheelClamped
+
+Checks if any wheel of the vehicle is clamped.
+
+<font style="color:red;">**Parameters:**</font><br>
+**vehicle** - `int` - The handle of the vehicle to check.
+
+<font style="color:green;">**Returns:**</font><br>
+`bool` - Returns true if any wheel is clamped.
+
+```lua
+local isAnyWheelClamped = exports["VehicleClamp"]:IsAnyWheelClamped(vehicle)
+```
+
+***
+
+## IsWheelClamped
+
+Checks if the specified wheel of the vehicle is clamped.
+
+<font style="color:red;">**Parameters:**</font><br>
+**vehicle** - `int` - The handle of the vehicle to check.<br>
+**wheelBone** - `string` - The name of the wheel bone to check.
+
+<font style="color:green;">**Returns:**</font><br>
+`bool` - Returns true if the specified wheel is clamped.
+
+```lua
+local isWheelClamped = exports["VehicleClamp"]:IsAnyWheelClamped(vehicle, wheelBone)
+```
+
+<details>
+<summary>Valid wheel bone names:</summary>
+
+* Front left: `wheel_lf`
+* Front right: `wheel_rf`
+* Rear left: `wheel_lr`
+* Rear right: `wheel_rr`
+* Middle left: `wheel_lm`, `wheel_lm1`, `wheel_lm2`, `wheel_lm3`
+* Middle right: `wheel_rm`, `wheel_rm1`, `wheel_rm2`, `wheel_rm3`
+
+</details>
+
+***
+
+## GetAllClampedWheels
+
+Gets a list of all clamped wheels of a vehicle.
+
+<font style="color:red;">**Parameters:**</font><br>
+**vehicle** - `int` - The handle of the vehicle to check.
+
+<font style="color:green;">**Returns:**</font><br>
+`table<string>` - Returns a table containing all wheel bones (check IsWheelClamped for a list of 
+bone names) that have a clamp attached.
+
+```lua
+local wheelList = exports["VehicleClamp"]:GetAllClampedWheels(vehicle)
+```

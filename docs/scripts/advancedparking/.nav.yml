@@ -1,0 +1,12 @@
+
+nav:
+  - "index.md"
+  - "installation.md"
+  - "config.md"
+  - "convars.md"
+  - "commands.md"
+  - "exports-server.md"
+  - "exports-client.md"
+  - "events-server.md"
+  - "events-client.md"
+  - "faq.md"
