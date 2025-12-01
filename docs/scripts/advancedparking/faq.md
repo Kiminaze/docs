@@ -140,7 +140,7 @@ out of a garage multiple times.
 
 <font style="color:green;">**Solution**</font>
 
-Make sure to disable okokGarage's config option called: `Config.SetVehicleImpoundAfter`
+Make sure to disable okokGarage's config option called: `Config.SetVehicleImpoundAfter` with setting it to `0`.
 
 Then find the function `takeOutVehicle` inside okokGarage's sv_utils.lua and add the following code 
 as the first line:
@@ -395,4 +395,105 @@ RegisterNetEvent("AP:checkKeys", function()
         end
     end)
 end)
+```
+
+***
+
+## Renewed-VehicleKeys
+
+<font style="color:red;">**Issue**</font>
+
+Missing keys after a server restart.
+
+<font style="color:green;">**Solution**</font>
+
+Add this code to the `utils\server.lua` in renewed-vehiclekeys:
+
+```lua
+RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
+    local playerId = source
+    local citizenid = exports.qbx_core:GetPlayer(playerId).PlayerData.citizenid
+    exports["oxmysql"]:execute("SELECT `plate` FROM `player_vehicles` WHERE `citizenid` = ?", { citizenid }, function(result)
+        for i = 1, #result do
+            exports["Renewed-Vehiclekeys"]:addKey(playerId, result[i].plate)
+        end
+    end)
+end)
+```
+
+***
+
+## Qbox VehicleKeys
+
+<font style="color:red;">**Issue**</font>
+
+Missing keys after a server restart.
+
+<font style="color:green;">**Solution**</font>
+
+Change the `OnPlayerLoaded` function in the `server\keys.lua` from Qbox to this:
+
+```lua
+RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
+    local playerId = source
+    local player = Player(playerId)
+    if player then
+        player.state:set('keysList', {}, true)
+    end
+
+    local citizenid = exports.qbx_core:GetPlayer(playerId).PlayerData.citizenid
+    exports.oxmysql:execute("SELECT `plate` FROM `player_vehicles` WHERE `citizenid` = ?", { citizenid }, function(result)
+        if not result then return end
+        
+        local keysGiven = false
+        for i = 1, #result do
+            local plate = result[i].plate
+            local vehicles = GetAllVehicles()
+            for j = 1, #vehicles do
+                if GetVehicleNumberPlateText(vehicles[j]) == plate then
+                    -- Pass true as skipNotification to prevent multiple notifications
+                    if GiveKeys(playerId, vehicles[j], true) then
+                        keysGiven = true
+                    end
+                    if debug then
+                        print(string.format('[vehiclekeys] Giving keys to %s for plate %s', citizenid, plate))
+                    end
+                    break
+                end
+            end
+        end
+
+        if keysGiven then
+            exports.qbx_core:Notify(playerId, locale('notify.keys_taken'))
+        end
+    end)
+end)
+```
+
+
+And change the `GiveKeys` function in the `server\keys.lua` from Qbox to this:100:
+
+```lua
+function GiveKeys(source, vehicle, skipNotification)
+    local citizenid = getCitizenId(source)
+    if not citizenid then return end
+
+    local player = Player(source)
+    if not player then return end
+
+    local vehicleEntity = Entity(vehicle)
+    if not vehicleEntity?.state then return end
+
+    local sessionId = vehicleEntity.state.sessionId or exports.qbx_core:CreateSessionId(vehicle)
+    local keys = player.state.keysList or {}
+    if keys[sessionId] then return end
+
+    keys[sessionId] = true
+
+    player.state:set('keysList', keys, true)
+    if not skipNotification then
+        exports.qbx_core:Notify(source, locale('notify.keys_taken'))
+    end
+    return true
+end
 ```
