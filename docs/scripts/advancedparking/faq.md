@@ -140,7 +140,8 @@ out of a garage multiple times.
 
 <font style="color:green;">**Solution**</font>
 
-Make sure to disable okokGarage's config option called: `Config.SetVehicleImpoundAfter` with setting it to `0`.
+Make sure to disable okokGarage's config option called `Config.SetVehicleImpoundAfter` by setting 
+it to `0`.
 
 Then find the function `takeOutVehicle` inside okokGarage's sv_utils.lua and add the following code 
 as the first line:
@@ -407,7 +408,7 @@ Missing keys after a server restart.
 
 <font style="color:green;">**Solution**</font>
 
-Add this code to the `utils\server.lua` in renewed-vehiclekeys:
+Add this code to `utils/server.lua` in renewed-vehiclekeys:
 
 ```lua
 RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
@@ -431,7 +432,7 @@ Missing keys after a server restart.
 
 <font style="color:green;">**Solution**</font>
 
-Change the `OnPlayerLoaded` function in the `server\keys.lua` from Qbox to this:
+Change the `OnPlayerLoaded` function in the `server/keys.lua` from Qbox to this:
 
 ```lua
 RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
@@ -470,8 +471,7 @@ RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
 end)
 ```
 
-
-And change the `GiveKeys` function in the `server\keys.lua` from Qbox to this:100:
+And change the `GiveKeys` function in the `server/keys.lua` from Qbox to this:
 
 ```lua
 function GiveKeys(source, vehicle, skipNotification)
