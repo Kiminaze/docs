@@ -497,3 +497,42 @@ function GiveKeys(source, vehicle, skipNotification)
     return true
 end
 ```
+
+***
+
+## Wasabi Carlock (ESX)
+
+<font style="color:red;">**Issue**</font>
+
+Missing keys after a server restart.
+
+<font style="color:green;">**Solution**</font>
+
+Add the following code to `AdvancedParking/client/cl_integrations.lua`:
+
+```lua
+AddEventHandler("esx:onPlayerSpawn", function()
+    TriggerServerEvent("AP:checkKeys")
+end)
+```
+
+And this code to `AdvancedParking/server/sv_integrations.lua`:
+
+```lua
+RegisterNetEvent("AP:checkKeys", function()
+    local playerId = source
+    local ESX = exports["es_extended"]:getSharedObject()
+    local xPlayer = ESX.GetPlayerFromId(playerId)
+    exports["oxmysql"]:execute([[
+        SELECT `plate`
+            FROM `owned_vehicles`
+            WHERE `owner` = ? OR `owner` = ?;
+    ]], { xPlayer.identifier, xPlayer.job.name }, function(result)
+        for i = 1, #result do
+            if (exports["AdvancedParking"]:GetVehiclePosition(result[i].plate)) then
+                exports["wasabi_carlock"]:GiveKey(playerId, result[i].plate)
+            end
+        end
+    end)
+end)
+```
