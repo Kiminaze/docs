@@ -51,6 +51,27 @@ situation, it might be best to simply ask for help in
 
 ***
 
+### Saving attached vehicles
+
+<div class="infobox warning" markdown="1">
+Experimental feature!
+</div>
+
+This should be added to any resource that allows attaching and detaching vehicles to and from other 
+vehicles.
+
+* Simply add the following line inside the fxmanifest of the respective resource:
+    ```lua
+    shared_script "@AdvancedParking/handleAttachedEntities.lua"
+    ```
+* Restart your server or refresh the resource list and restart the respective resource after adding 
+  the line.
+
+Attached vehicles will only be saved when they both have been saved previously to prevent any sort 
+of exploits.
+
+***
+
 ### Installation Videos
 
 <div class="youtube-placeholder" data-videotitle="AdvancedParking Installation English" data-videoid="1IPgzh8Y6P0"></div>
