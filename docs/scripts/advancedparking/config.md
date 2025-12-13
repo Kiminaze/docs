@@ -157,3 +157,24 @@ AP is trying to respawn them. It will not remove the vehicle on a cleanup.
 * If submergedVehicles = false, no submerged vehicles will be removed.
 * If submergedVehicles = true and allVehicles = false, only saved vehicles will be removed if they are submerged.
 * If submergedVehicles = true and allVehicles = true, all submerged vehicles will be removed.
+
+***
+
+## Map bounds
+
+<div class="infobox warning" markdown="1">
+Experimental feature!
+</div>
+
+This setting defines the area for AdvancedParking's internal optimisation layer. Imagine a giant 
+rectangle across the whole map.
+
+This only needs to be adjusted if you are using any additional maps that are outside the main 
+island or Cayo Perico.
+
+Warnings will appear when vehicles are detected outside of this area.
+
+- `mapBottomLeft` denotes the X and Y coordinates of the southwest corner of the map
+- `mapTopRight` denotes the X and Y coordinates of the northeast corner of the map
+
+
