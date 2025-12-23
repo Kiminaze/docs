@@ -249,7 +249,7 @@ When enabling `Cleanup.storeVehicles` vehicles won't be stored properly.
 <font style="color:green;">**Solution**</font>
 
 Add the missing columns to the query inside `AdvancedParking/server/storage/oxmysql.lua` and change 
-`"YOUR_GARAGE_NAME"` to the name of the garage.
+`"Legion Square"` to the name of the garage.
 
 You can simply replace `Storage.StoreVehicleInGarage` with the following:
 
