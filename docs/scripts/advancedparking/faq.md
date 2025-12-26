@@ -400,6 +400,50 @@ end)
 
 ***
 
+## Jaksam JobsCreator
+
+<font style="color:red;">**Issue**</font>
+
+When setting the config option `saveOnlyOwnedVehicles` to `true`, job vehicles from JobsCreator 
+will still be ignored.
+
+<font style="color:green;">**Solution**</font>
+
+<div class="infobox warning" markdown="1">
+Only for the experimental version!
+</div>
+
+Replace the function `Storage.IsVehicleOwned` inside `AdvancedParking/server/storage/oxmysql.lua` 
+with the following:
+
+```lua
+Storage.IsVehicleOwned = function(plate)
+    local isOwned = oxmysql:scalar_async(([[
+        SELECT `plate`
+            FROM `%s`
+            WHERE `plate` = ? OR `plate` = ?;
+    ]]):format(GetOwnedVehiclesTableName()), {
+        plate,
+        Trim(plate)
+    })
+
+    if (isOwned) then
+        return isOwned
+    end
+
+    return oxmysql:scalar_async([[
+        SELECT `plate`
+            FROM `jobs_garages`
+            WHERE `plate` = ? OR `plate` = ?;
+    ]], {
+        plate,
+        Trim(plate)
+    })
+end
+```
+
+***
+
 ## Renewed-VehicleKeys
 
 <font style="color:red;">**Issue**</font>
