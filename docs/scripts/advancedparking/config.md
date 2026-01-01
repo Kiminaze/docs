@@ -32,6 +32,7 @@ thresholdTime, it will be removed from the world.
 
 <div class="tab-content" markdown="1">
 **No vehicle will be deleted due to time constraints.**
+
 * Server restarts at midnight and cleanup is activated on server start.
 * Vehicle A was last updated at 11 p.m.
 * Vehicle B was last updated at 2 p.m.
@@ -40,6 +41,7 @@ thresholdTime, it will be removed from the world.
 </div>
 <div class="tab-content" markdown="1">
 **All vehicle will be deleted due to time constraints.**
+
 * Server restarts at midnight and cleanup is activated on server start.
 * Vehicle A was last updated at 11 p.m.
 * Vehicle B was last updated at 2 p.m.
@@ -48,6 +50,7 @@ thresholdTime, it will be removed from the world.
 </div>
 <div class="tab-content" markdown="1">
 **Some vehicle will be deleted due to time constraints.**
+
 * Server restarts at midnight and cleanup is activated on server start.
 * Vehicle A was last updated at 11 p.m.
 * Vehicle B was last updated at 2 p.m.
@@ -76,6 +79,7 @@ removed.
 
 <div class="tab-content" markdown="1">
 **Only saved vehicle will be deleted due to damage.**
+
 * Server restarts and cleanup is activated at server start.
 * Vehicle A has 900 engine health and is not saved.
 * Vehicle B has 960 engine health and is saved.
@@ -86,6 +90,7 @@ removed.
 </div>
 <div class="tab-content" markdown="1">
 **All vehicle will be deleted due to damage.**
+
 * Server restarts and cleanup is activated at server start.
 * Vehicle A has 900 engine health and is not saved.
 * Vehicle B has 960 engine health and is saved.
@@ -96,6 +101,7 @@ removed.
 </div>
 <div class="tab-content" markdown="1">
 **No vehicle will be deleted due to damage.**
+
 * Server restarts and cleanup is activated at server start.
 * Vehicle A has 900 engine health and is not saved.
 * Vehicle B has 960 engine health and is saved.
@@ -126,6 +132,7 @@ from any player than the distanceThreshold will be removed.
 
 <div class="tab-content" markdown="1">
 **Only saved vehicle will be deleted due to distance from player.**
+
 * Server restarts and cleanup is activated at server start.
 * Vehicle A is 200 meters away from a player and is not saved.
 * Vehicle B is 300 meters away from a player and is saved.
@@ -136,6 +143,7 @@ from any player than the distanceThreshold will be removed.
 </div>
 <div class="tab-content" markdown="1">
 **All vehicle will be deleted due to distance from player.**
+
 * Server restarts and cleanup is activated at server start.
 * Vehicle A is 200 meters away from a player and is not saved.
 * Vehicle B is 300 meters away from a player and is saved.
@@ -146,6 +154,7 @@ from any player than the distanceThreshold will be removed.
 </div>
 <div class="tab-content" markdown="1">
 **No vehicle will be deleted due to distance from player.**
+
 * Server restarts and cleanup is activated at server start.
 * Vehicle A is 200 meters away from a player and is not saved.
 * Vehicle B is 300 meters away from a player and is saved.
