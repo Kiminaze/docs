@@ -173,7 +173,7 @@ AP is trying to respawn them. It will not remove the vehicle on a cleanup.
 
 All vehicle in this zones will always be removed on a cleanup, without any other conditions.
 
-* { position = vector3(0, 0, 0), radius = 10.0 } -> This will remove vehicle around the map zenter in a 10 meter radius.
+* `{ position = vector3(0, 0, 0), radius = 10.0 }` -> This will remove vehicle around the map zenter in a 10 meter radius.
 
 ***
 
@@ -181,7 +181,7 @@ All vehicle in this zones will always be removed on a cleanup, without any other
 
 All vehicle in this sone will always be ignored by the cleanup, they will not be checked for any other condition.
 
-* { position = vector3(0, 0, 0), radius = 10.0 } -> This will remove vehicle around the map zenter in a 10 meter radius.
+* `{ position = vector3(0, 0, 0), radius = 10.0 }` -> This will remove vehicle around the map zenter in a 10 meter radius.
 
 ***
 
@@ -233,8 +233,8 @@ If this is set to `false` it will not start an automated cleanup on a start of A
 You can set times were a cleanup should be done automatic.
 This uses system time of the server. You can set it daily or weekly.
 
-* { hour = 3, minute = 0 }, -> Every day at 3 am.
-* { day = 3, hour = 16, minute = 0 }, -> Every wednesday at 4 pm.
+* `{ hour = 3, minute = 0 }`, -> Every day at 3 am.
+* `{ day = 3, hour = 16, minute = 0 }`, -> Every wednesday at 4 pm.
 
 ***
 
