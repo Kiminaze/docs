@@ -41,7 +41,7 @@ extra:
     title: Cookie consent
     description: >- 
       We use cookies for displaying YouTube videos. With your consent, you're allowing us to embed these videos directly.<br>
-      <a href="/docs/imprint/#3-privacy-policy">Our Privacy Policy</a>
+      <a href="/imprint/#3-privacy-policy">Our Privacy Policy</a>
     actions:
       - accept
       - reject
@@ -51,7 +51,7 @@ extra:
         checked: true
 
 copyright: >
-  Copyright &copy; 2025 Philipp Decker - <a href="/docs/imprint/">Imprint</a> - <a href="#__consent">Change cookie settings</a>
+  Copyright &copy; 2025 Philipp Decker - <a href="/imprint/">Imprint</a> - <a href="#__consent">Change cookie settings</a>
 
 validation:
   omitted_files: ignore
