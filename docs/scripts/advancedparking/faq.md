@@ -263,6 +263,11 @@ Storage.StoreVehicleInGarage = function(params)
 end
 ```
 
+<div class="infobox warning" markdown="1">
+If you are still running into issues, set `Config.SpawnVehiclesWithServerSetter = true` in 
+JG Advanced Garages.
+</div>
+
 ***
 
 ## JG Garage + qb-vehiclekeys
