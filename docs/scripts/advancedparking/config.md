@@ -1,7 +1,7 @@
 
 # Configuration
 
-## Cleanup settings
+## Cleanup
 
 The cleanup is a function for deleting vehicles from the world and the AP database ( `vehicle_parking` ), depending on 
 your settings. The cleanup will be performed after a server or script restart if you set 
@@ -13,21 +13,21 @@ that match the cleanup config conditions will be removed.
 
 ***
 
-### ThresholdTime
+### timeThreshold
 
-The thresholdTime is just the holding time for a vehicle. It doesn't matter how often or when you 
+The timeThreshold is just the holding time for a vehicle. It doesn't matter how often or when you 
 perform a cleanup, it will not affect whether a cleanup occurs.
 
-As long as thresholdTime is not nil, it will be checked during a cleanup. Every vehicle that is 
-saved will be checked against the thresholdTime. If a vehicle has been standing in the world 
+As long as timeThreshold is not nil, it will be checked during a cleanup. Every vehicle that is 
+saved will be checked against the timeThreshold. If a vehicle has been standing in the world 
 without an update (e.g. enter/exit, damage taken etc) for a timeperiod equal or higher than 
-thresholdTime, it will be removed from the world.
+timeThreshold, it will be removed from the world.
 
 <div class="content-box" markdown="1">
 <div class="tabs">
-<div class="tab">thresholdTime = nil</div>
-<div class="tab">thresholdTime = 0</div>
-<div class="tab">thresholdTime = 6</div>
+<div class="tab">timeThreshold = nil</div>
+<div class="tab">timeThreshold = 0</div>
+<div class="tab">timeThreshold = 6</div>
 </div>
 
 <div class="tab-content" markdown="1">
@@ -61,7 +61,7 @@ thresholdTime, it will be removed from the world.
 
 ***
 
-### EngineThreshold
+### engineThreshold
 
 The engineThreshold is simply the minimum health required for a vehicle.
 
@@ -114,7 +114,7 @@ removed.
 
 ***
 
-### DistanceThreshold
+### distanceThreshold
 
 The distanceThreshold is the minimum distance between player and vehicle.
 
@@ -167,7 +167,7 @@ from any player than the distanceThreshold will be removed.
 
 ***
 
-### SubmergedVehicles
+### submergedVehicles
 
 The submergedVehicles setting determines whether vehicles submerged underwater will be removed when 
 AP is trying to respawn them. It will not remove the vehicle on a cleanup.
@@ -178,7 +178,7 @@ AP is trying to respawn them. It will not remove the vehicle on a cleanup.
 
 ***
 
-### Zones
+### zones
 
 All vehicle in this zones will always be removed on a cleanup, without any other conditions.
 
@@ -186,7 +186,7 @@ All vehicle in this zones will always be removed on a cleanup, without any other
 
 ***
 
-### IgnoredZones
+### ignoredZones
 
 All vehicle in this sone will always be ignored by the cleanup, they will not be checked for any other condition.
 
@@ -194,7 +194,7 @@ All vehicle in this sone will always be ignored by the cleanup, they will not be
 
 ***
 
-### IgnoredPlates
+### ignoredPlates
 
 Plates listed will be ignored and not removed. They can include partial strings and are not case sensitive.
 
@@ -209,65 +209,135 @@ No plate is matching with the first entry and no plate contains partials from th
 
 ***
 
-### IgnoredModels
+### ignoredModels
 
 Vehicle with ignored models will be ignored and not removed.
 They need to be written in \`blista\` and not like "blista"! This symboles are the `grave accent` or also called `backtick`.
 
 ***
 
-### AllVehicle
+### allVehicles
 
 If this is set to `true`, all vehicle ( saved and not saved by AP ) will be removed on a cleanup, accordingly to the cleanup settings.
 If this is set to `false`, only by AP saved vehicle will be removed on a cleanup, accordingly to the cleanup settings.
 
 ***
 
-### StoreVehicles
+### storeVehicles
 
 Send (owned) vehicles to e.g. garage or impound on cleanup.
 Some garages will need some chnages in sv_integrations.lua for implementation. Take a look into our FAQ.
 
 ***
 
-### OnScriptStart
+### onScriptStart
 
 If this is set to `true` an automated cleanup will be done at any start of AdvancedParking.
 If this is set to `false` it will not start an automated cleanup on a start of AdvancedParking.
 
 ***
 
-### Times
+### onServerStart
+
+<div class="infobox warning" markdown="1">
+Experimental feature!
+</div>
+
+When set to `true` will run the cleanup process on server startup when the resource is starting.
+
+***
+
+### onScriptRestart
+
+<div class="infobox warning" markdown="1">
+Experimental feature!
+</div>
+
+When set to `true` will run the cleanup process on a **script restart**.
+
+***
+
+### times
 
 You can set times were a cleanup should be done automatic.
 This uses system time of the server. You can set it daily or weekly.
 
-* `{ hour = 3, minute = 0 }`, -> Every day at 3 am.
-* `{ day = 3, hour = 16, minute = 0 }`, -> Every wednesday at 4 pm.
+* `{ hour = 3, minute = 0 }` -> Every day at 3 am.
+* `{ day = 3, hour = 16, minute = 0 }` -> Every wednesday at 4 pm.
 
 ***
 
-### NotificationTimes
+### notificationTimes
 
 When players should be notified before a cleanup (in minutes) is done.
 
 ***
 
-### TimeLeftNotification
+### timeLeftNotification
 
 Notification text to show players before a cleanup (use %s as placeholder for time left in minutes).
 If you want to use a custom notification, take look at `cl_integrations.lua`.
 
 ***
 
-### DeleteNotification
+### deleteNotification
 
 Notification text to show players when the cleanup is done.
 If you want to use a custom notification, take look at `cl_integrations.lua`.
 
 ***
 
+## SaveExtraValues
 
+Defines additional values that will be saved.
+
+### roofState
+
+If the state of the roof of a convertible should be saved. If set to false it will always be closed.
+
+### landingGearUp
+
+If the landing gear state should be saved. If set to false it will always be deployed.
+
+### vtolMode
+
+If the vtol mode should be saved (e.g. on the `hydra`).
+
+### stubWings
+
+If the deployable stub wings state should be saved (e.g. on the `akula`).
+
+### boatAnchor
+
+If the anchor state of boats should be saved.
+
+***
+
+## routingBucket
+
+This setting changes the default routing bucket where the script is operating in. Change this only 
+if your "main" bucket for player sessions is different from default.
+
+***
+
+## multiBucketSupport
+
+Enable this setting to enable the script to work in _all_ buckets. While this option works 
+perfectly fine, most servers should not use this unless all your used buckets have hardcoded ids. 
+If a vehicle is saved in bucket 17 it will also respawn in bucket 17 on a server restart.
+
+***
+
+## poolSizeWarningThreshold
+
+This value relates to the `CNetObjVehicle` pool size. A warning will be shown if vehicles spawn for 
+a client and this client has more than `max CNetObjVehicle pool size` minus `this value`.
+
+The `CNetObjVehicle` pool size is hardcoded to a maximum of 255 networked vehicles. This value 
+cannot be exceeded for a client. Attempting to spawn more vehicles in this client's area causes the 
+vehicles to not be synced to this client or other behavior with desynced vehicles.
+
+***
 
 ## Map bounds
 
