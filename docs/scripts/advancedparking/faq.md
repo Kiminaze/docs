@@ -585,3 +585,52 @@ RegisterNetEvent("AP:checkKeys", function()
     end)
 end)
 ```
+
+## RxGarage
+
+<font style="color:red;">**Issue**</font>
+
+When enabling `Cleanup.storeVehicles` vehicles won't be stored properly.
+
+<font style="color:green;">**Solution**</font>
+
+Add the missing columns and some logic to the query inside 
+`AdvancedParking/server/storage/oxmysql.lua`.
+
+You can simply replace `Storage.StoreVehicleInGarage` with the following and set the impound types 
+below:
+
+```lua
+local impoundTypes = {
+    automobile  = "",
+    bike        = "",
+    boat        = "",
+    heli        = "",
+    plane       = "",
+    submarine   = "",
+    trailer     = "",
+    train       = ""
+}
+local truckImpound = ""
+local trucks = {
+    `benson`,
+    `pounder`
+}
+Storage.StoreVehicleInGarage = function(plate, vehicleData)
+    local isTruck = false
+    for i = 1, #trucks do
+        if (trucks[i] == vehicleData.model) then
+            isTruck = true
+            break
+        end
+    end
+
+    oxmysql:update(([[
+        UPDATE `%s` SET `%s` = 1, `parked_at` = ?, `impound_reason` = ?, `impound_till` = ?, `impound_price` = ?, `self_retrievable` = ?, `location` = ?
+            WHERE `plate` = ? OR `plate` = ?;
+    ]]):format(GetOwnedVehiclesTableName(), GetStoredColumnName()), {
+        "impound", "Cleanup", os.time(), 0, 1, isTruck and truckImpound or impoundTypes[vehicleData.type],
+        plate, Trim(plate)
+    })
+end
+```
