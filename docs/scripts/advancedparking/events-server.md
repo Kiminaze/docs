@@ -1,12 +1,14 @@
 
 # Events (server)
 
-## AP:vehicleSpawned
+## Vehicle spawn
 
-Triggered when a vehicle has been spawned by AdvancedParking.
+Triggered **after** successful vehicle spawn.
+
+Listen-only, do not trigger!
 
 <font style="color:red;">**Parameters:**</font><br>
-**vehicle** - `int` - The vehicle's server side handle.
+**vehicle** - `int` - Vehicle handle.
 
 ```lua
 AddEventHandler("AP:vehicleSpawned", function(vehicle)
@@ -16,17 +18,20 @@ end)
 
 ***
 
-## AP:cleanup:deletingVehicle
+## Vehicle cleanup
 
-Triggered when a vehicle has been marked for cleanup. Executes right **before** deleting the entity.
+Triggered **before** a vehicle will be deleted through the cleanup.
+
+Listen-only, do not trigger!
 
 <font style="color:red;">**Parameters:**</font><br>
-**vehicle** - `int?` - The vehicle's server side handle. Can be nil if entity does not exist<br>
-**plate** - `string` - The vehicle's plate (full 8 characters).<br>
-**reason** - `string` - The cleanup reason (`time`, `engineHealth`, `distance`, `zone_<id>`).
+**vehicle** - `int?` - Vehicle handle. Can be nil if entity does not exist<br>
+**plate** - `string` - Vehicle plate (full 8 characters).<br>
+**data** - `VehicleData` - Full vehicle data table.<br>
+**reason** - `string` - Cleanup reason (`time`, `engineHealth`, `distance`, `zone_<id>`).
 
 ```lua
-AddEventHandler("AP:cleanup:deletingVehicle", function(vehicle, plate, reason)
+AddEventHandler("AP:cleanup:deletingVehicle", function(vehicle, plate, data, reason)
     print("Vehicle " .. plate .. " was deleted for: " .. reason)
 end)
 ```
