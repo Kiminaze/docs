@@ -55,7 +55,7 @@ setr AdvancedParking_log_warning 1
 
 ## log_error
 
-Enables/disables logging of errors.  Defaults to enabled.
+Enables/disables logging of errors. Defaults to enabled.
 
 ```
 setr AdvancedParking_log_error 1
