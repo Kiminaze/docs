@@ -31,7 +31,7 @@ foremost!
 
 * Simply add the following line inside the fxmanifest of the respective resource:
     ```lua
-    shared_script "@AdvancedParking/fixDeleteVehicle.lua"
+    shared_script "@AdvancedParking/patches/fixDeleteVehicle.lua"
     ```
 * Restart your server or refresh the resource list and restart the respective resource after adding 
   the line.
@@ -52,10 +52,6 @@ situation, it might be best to simply ask for help in
 ***
 
 ### Saving attached vehicles
-
-<div class="infobox warning" markdown="1">
-Experimental feature!
-</div>
 
 This should be added to any resource that allows attaching and detaching vehicles to and from other 
 vehicles.
