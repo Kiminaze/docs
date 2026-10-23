@@ -3,13 +3,19 @@
 
 ## Cleanup
 
-The cleanup is a function for deleting vehicles from the world and the AP database ( `vehicle_parking` ), depending on 
-your settings. The cleanup will be performed after a server or script restart if you set 
-`onScriptRestart = true` and/or `onServerStart = true`. A cleanup will also be performed when you 
-add `times = {}` in the config.
+The cleanup is a function for deleting vehicles from the world and AP's database table 
+(`vehicle_parking`), depending on your settings. The cleanup will be performed after a server or 
+script restart if you set `onScriptRestart = true` and/or `onServerStart = true`. A cleanup will 
+also be performed when you add `times = {}` in the config.
+
+The cleanup is separated into three categories:
+
+* **owned:** Only player owned vehicles (from `owned_vehicles`/`player_vehicles` table).
+* **saved:** Vehicles that are saved but not player owned.
+* **all:** Any other vehicle not included above.
 
 It will not remove all data from the database and not all vehicles from the server. Only vehicles 
-that match the cleanup config conditions will be removed.
+that match the cleanup conditions will be removed.
 
 ***
 
@@ -65,10 +71,8 @@ timeThreshold, it will be removed from the world.
 
 The engineThreshold is simply the minimum health required for a vehicle.
 
-As long as engineThreshold is not nil, it will be checked during a cleanup. Every saved vehicle 
-will be checked for its engine health. If you set allVehicles = true, then _all_ vehicles will be 
-checked. All vehicles that have engine health equal to or below the engineThreshold value will be 
-removed.
+As long as engineThreshold is not nil, it will be checked during a cleanup. All vehicles that have 
+engine health equal to or below the engineThreshold will be removed.
 
 <div class="content-box" markdown="1">
 <div class="tabs">
@@ -86,7 +90,7 @@ removed.
 * Vehicle C has 450 engine health and is not saved.
 * Vehicle D has 560 engine health and is saved.
 
-**Result:** Vehicle A will stay.  Vehicle B will stay.  Vehicle C will stay.  Vehicle D will be removed.
+**Result:** Vehicle A will stay. Vehicle B will stay. Vehicle C will stay. Vehicle D will be removed.
 </div>
 <div class="tab-content" markdown="1">
 **All vehicle will be deleted due to damage.**
@@ -97,7 +101,8 @@ removed.
 * Vehicle C has 450 engine health and is not saved.
 * Vehicle D has 560 engine health and is saved.
 
-**Result:** Vehicle A will stay.  Vehicle B will stay.  Vehicle C will be removed.  Vehicle D will be removed.
+**Result:** Vehicle A will stay. Vehicle B will stay. Vehicle C will be removed. Vehicle D will be 
+removed.
 </div>
 <div class="tab-content" markdown="1">
 **No vehicle will be deleted due to damage.**
@@ -108,7 +113,7 @@ removed.
 * Vehicle C has 450 engine health and is not saved.
 * Vehicle D has 560 engine health and is saved.
 
-**Result:** Vehicle A will stay.  Vehicle B will stay.  Vehicle C will stay.  Vehicle D will stay.
+**Result:** Vehicle A will stay. Vehicle B will stay. Vehicle C will stay. Vehicle D will stay.
 </div>
 </div>
 
@@ -119,9 +124,8 @@ removed.
 The distanceThreshold is the minimum distance between player and vehicle.
 
 As long as distanceThreshold is not nil, it will be checked during a cleanup. Every saved vehicle 
-will be checked for its distance to the closest player. If you set allVehicles = true, _all_ 
-vehicles will be checked. Otherwise, only saved vehicles will be checked. All vehicles further away 
-from any player than the distanceThreshold will be removed.
+will be checked for its distance to the closest player. All vehicles further away than the 
+distanceThreshold from any player will be removed.
 
 <div class="content-box" markdown="1">
 <div class="tabs">
@@ -139,7 +143,8 @@ from any player than the distanceThreshold will be removed.
 * Vehicle C is 90 meters away from a player and is not saved.
 * Vehicle D is 80 meters away from a player and is saved.
 
-**Result:** Vehicle A will stay.  Vehicle B will be removed.  Vehicle C will stay.  Vehicle D will stay.
+**Result:** Vehicle A will stay. Vehicle B will be removed. Vehicle C will stay. Vehicle D will 
+stay.
 </div>
 <div class="tab-content" markdown="1">
 **All vehicle will be deleted due to distance from player.**
@@ -150,7 +155,8 @@ from any player than the distanceThreshold will be removed.
 * Vehicle C is 90 meters away from a player and is not saved.
 * Vehicle D is 80 meters away from a player and is saved.
 
-**Result:** Vehicle A will be removed.  Vehicle B will be removed.  Vehicle C will stay.  Vehicle D will stay.
+**Result:** Vehicle A will be removed. Vehicle B will be removed. Vehicle C will stay. Vehicle D 
+will stay.
 </div>
 <div class="tab-content" markdown="1">
 **No vehicle will be deleted due to distance from player.**
@@ -161,7 +167,7 @@ from any player than the distanceThreshold will be removed.
 * Vehicle C is 90 meters away from a player and is not saved.
 * Vehicle D is 80 meters away from a player and is saved.
 
-**Result:** Vehicle A will stay.  Vehicle B will stay.  Vehicle C will stay.  Vehicle D will stay.
+**Result:** Vehicle A will stay. Vehicle B will stay. Vehicle C will stay. Vehicle D will stay.
 </div>
 </div>
 
@@ -173,7 +179,8 @@ The submergedVehicles setting determines whether vehicles submerged underwater w
 AP is trying to respawn them. It will not remove the vehicle on a cleanup.
 
 * If submergedVehicles = false, no submerged vehicles will be removed.
-* If submergedVehicles = true and allVehicles = false, only saved vehicles will be removed if they are submerged.
+* If submergedVehicles = true and allVehicles = false, only saved vehicles will be removed if they 
+are submerged.
 * If submergedVehicles = true and allVehicles = true, all submerged vehicles will be removed.
 
 ***
@@ -182,27 +189,31 @@ AP is trying to respawn them. It will not remove the vehicle on a cleanup.
 
 All vehicle in this zones will always be removed on a cleanup, without any other conditions.
 
-* `{ position = vector3(0, 0, 0), radius = 10.0 }` -> This will remove vehicle around the map zenter in a 10 meter radius.
+* `{ position = vector3(0, 0, 0), radius = 10.0 }` -> This will remove vehicle around the map 
+center in a 10 meter radius.
 
 ***
 
 ### ignoredZones
 
-All vehicle in this sone will always be ignored by the cleanup, they will not be checked for any other condition.
+All vehicle in this sone will always be ignored by the cleanup, they will not be checked for any 
+other condition.
 
-* `{ position = vector3(0, 0, 0), radius = 10.0 }` -> This will remove vehicle around the map zenter in a 10 meter radius.
+* `{ position = vector3(0, 0, 0), radius = 10.0 }` -> This will remove vehicle around the map 
+center in a 10 meter radius.
 
 ***
 
 ### ignoredPlates
 
-Plates listed will be ignored and not removed. They can include partial strings and are not case sensitive.
+Plates listed will be ignored and not removed. They can include partial strings and are not case 
+sensitive.
 
 * "XYZ 404 ", "404",
 
-If you have this plates ignored, it will ignore a vehicle with the plate: "XYZ 404 " or with a plate like "abc 404 ".
-The first plate is the exact same string as the first entry in the ignore list. The second plate contains a partial string 
-that is an entry in your ignore list.
+If you have this plates ignored, it will ignore a vehicle with the plate: "XYZ 404 " or with a 
+plate like "abc 404 ". The first plate is the exact same string as the first entry in the ignore 
+list. The second plate contains a partial string that is an entry in your ignore list.
 
 Plates that would not be ignored as an example: "XYZ 403 " or "abc 40 4".
 No plate is matching with the first entry and no plate contains partials from the second entry.
@@ -212,48 +223,34 @@ No plate is matching with the first entry and no plate contains partials from th
 ### ignoredModels
 
 Vehicle with ignored models will be ignored and not removed.
-They need to be written in \`blista\` and not like "blista"! This symboles are the `grave accent` or also called `backtick`.
-
-***
-
-### allVehicles
-
-If this is set to `true`, all vehicle ( saved and not saved by AP ) will be removed on a cleanup, accordingly to the cleanup settings.
-If this is set to `false`, only by AP saved vehicle will be removed on a cleanup, accordingly to the cleanup settings.
+They need to be written in \`blista\` and not like "blista"! These symboles are called 
+`grave accent` or `backtick`.
 
 ***
 
 ### storeVehicles
 
 Send (owned) vehicles to e.g. garage or impound on cleanup.
-Some garages will need some chnages in sv_integrations.lua for implementation. Take a look into our FAQ.
-
-***
-
-### onScriptStart
-
-If this is set to `true` an automated cleanup will be done at any start of AdvancedParking.
-If this is set to `false` it will not start an automated cleanup on a start of AdvancedParking.
+Some garages might not work out of the box. Check our [FAQ](faq.md) for potential changes for your 
+scripts.
 
 ***
 
 ### onServerStart
 
-<div class="infobox warning" markdown="1">
-Experimental feature!
-</div>
+When set to `true` the cleanup process will run on server startup when the resource is starting. It 
+will not run on a script restart.
 
-When set to `true` will run the cleanup process on server startup when the resource is starting.
+Can be used in conjunction with onScriptRestart to do both.
 
 ***
 
 ### onScriptRestart
 
-<div class="infobox warning" markdown="1">
-Experimental feature!
-</div>
+When set to `true` the cleanup process will run on any _restart_ of AdvancedParking. It will not 
+run on server startup.
 
-When set to `true` will run the cleanup process on a **script restart**.
+Can be used in conjunction with onServerStart to do both.
 
 ***
 
@@ -313,6 +310,13 @@ If the anchor state of boats should be saved.
 
 ***
 
+## saveBrokenLights
+
+Allows saving headlights, taillights and other additional lights on vehicles. Uses deformation 
+functions to break the lights and can thus not net 100% accurate results.
+
+***
+
 ## routingBucket
 
 This setting changes the default routing bucket where the script is operating in. Change this only 
@@ -341,19 +345,111 @@ vehicles to not be synced to this client or other behavior with desynced vehicle
 
 ## Map bounds
 
-<div class="infobox warning" markdown="1">
-Experimental feature!
-</div>
-
 This setting defines the area for AdvancedParking's internal optimisation layer. Imagine a giant 
 rectangle across the whole map.
 
 This only needs to be adjusted if you are using any additional maps that are outside the main 
-island or Cayo Perico.
+island or Cayo Perico island.
 
 Warnings will appear when vehicles are detected outside of this area.
 
 - `mapBottomLeft` denotes the X and Y coordinates of the southwest corner of the map
 - `mapTopRight` denotes the X and Y coordinates of the northeast corner of the map
 
+***
 
+## forceUnfreezeVehicles
+
+Workaround for a problem where vehicles can sometimes be frozen for whatever reason. Needs to be 
+used in conjunction with the file `fixFreezeEntity.lua`.
+
+Add `shared_script "@AdvancedParking/patches/fixFreezeEntity.lua"` to any scripts that actively 
+need to freeze vehicles (e.g. some mechanic scripts).
+
+***
+
+## fuelResource
+
+Set the name of your fuel resource here. This works with any fuel resource that provides the 
+`GetFuel` and `SetFuel` exports. You can leave it empty to automatically detect ox_fuel or if that 
+is not found it will use the default native functions.
+
+***
+
+## saveOnlyOwnedVehicles
+
+Save only player owned vehicles. Works with ESX, QB, QBox, ox.
+
+***
+
+## preventDuplicateVehicles
+
+If set to true, it will delete outside vehicles with the same plate on an update. This is meant as 
+a compatibility feature with resources that might not properly detect vehicles from AP as outside.
+
+You should edit your scripts to prevent these in the first place if possible. We might be able to 
+help with these issues if you join [our support Discord](https://discord.kiminaze.de).
+
+***
+
+## classesBlacklist
+
+Comma separated list of vehicle classes that should not be saved. A list of all IDs can be found 
+here: https://docs.fivem.net/natives/?_0x29439776AAA00A62
+
+***
+
+## vehiclesBlacklist
+
+Comma separated list of vehicle models that should not be saved. Use the model names in backticks 
+instead of quotes like this: `blista`.
+
+***
+
+## platesBlacklist
+
+Comma separated list of plates that should not be saved. The entries are not case sensitive and you 
+can use partial strings.
+
+***
+
+## ignoreStateBags
+
+Comma separated list of state bags that should not be saved at all. You can include partial strings.
+
+***
+
+## preventStateBagAutoUpdate
+
+Comma separated list of state bags that should not be updated automatically and directly to the 
+database. You can include partial strings.
+
+This is particularly useful if some script updates state bags way too often and causes excessive 
+database queries. (e.g. some fuel resource might be doing this)
+
+***
+
+## Commands
+
+All commands use ace permissions and are admin only be default.
+
+### dvCommand
+
+Delete a vehicle using either its plate or AP's internal identifier.
+
+### bringCommand
+
+Bring a vehicle to yourself using either its plate or AP's internal identifier.
+
+### deleteAndStoreCommand
+
+Deletes all saved vehicles and stores vehicles that can be stored in the garage.
+
+### deleteSavedVehiclesCommand
+
+Deletes all saved vehicles from AP's internal data. It does not delete vehicles from the world.
+
+### cleanupCommand
+
+Trigger a manual cleanup. Valid arguments are `owned`, `saved` and `all`. Without an argument all 
+three cleanups are triggered. 
