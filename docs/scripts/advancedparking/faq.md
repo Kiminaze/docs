@@ -118,6 +118,28 @@ end
 
 ***
 
+## qb-vehiclekeys notification spam on connect
+
+<font style="color:red;">**Issue**</font>
+
+When connecting to a server AdvancedParking causes a notification to pop up for every single 
+vehicle of the player that is outside right now since `qb-vehiclekeys` has no way to suppress the 
+"GiveKeys" notification.
+
+<font style="color:green;">**Solution**</font>
+
+* Add the following line inside the fxmanifest of `qb-vehiclekeys`:
+    ```lua
+    shared_script "@AdvancedParking/patches/qb-vehiclekeys.lua"
+    ```
+* Restart your server or refresh the resource list and restart the respective resource after adding 
+  the line.
+
+This patches the `GiveKeys` function and adds a third parameter that allows preventing the 
+notification.
+
+***
+
 ## GG Garage Job
 
 <font style="color:red;">**Issue**</font>
