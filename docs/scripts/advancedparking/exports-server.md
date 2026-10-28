@@ -145,6 +145,55 @@ end
 
 ***
 
+## AddStateBagsToIgnoreList
+
+Adds all given params to the state bag ignore list. Intended to be used from other resources to 
+prevent state bags from being saved altogether.
+
+<font style="color:red;">**Parameters:**</font><br>
+**...** - `string` - State bag names to ignore.
+
+```lua
+-- example integration:
+--   executes on resource start and when it is already started to prevent loadorder issues
+AddEventHandler("onResourceStart", function(resourceName)
+    if (resourceName == "AdvancedParking") then
+        exports["AdvancedParking"]:AddStateBagsToIgnoreList("fuel", "attachments")
+    end
+end)
+
+if (GetResourceState("AdvancedParking") == "started") then
+    exports["AdvancedParking"]:AddStateBagsToIgnoreList("fuel", "attachments")
+end
+```
+
+***
+
+## AddStateBagsToPreventAutoUpdateList
+
+Adds all params to the state bag list to prevent auto updates. Intended to be used from other 
+resources to prevent state bags from being saved directly when they are updated. These will only be 
+saved on a full save.
+
+<font style="color:red;">**Parameters:**</font><br>
+**...** - `string` - State bag names to not auto update.
+
+```lua
+-- example integration:
+--   executes on resource start and when it is already started to prevent loadorder issues
+AddEventHandler("onResourceStart", function(resourceName)
+    if (resourceName == "AdvancedParking") then
+        exports["AdvancedParking"]:AddStateBagsToPreventAutoUpdateList("fuel", "attachments")
+    end
+end)
+
+if (GetResourceState("AdvancedParking") == "started") then
+    exports["AdvancedParking"]:AddStateBagsToPreventAutoUpdateList("fuel", "attachments")
+end
+```
+
+***
+
 ## ForceVehicleUpdateInDB
 
 Forces an update of all currently set values of the specified vehicle to the database. Does nothing 
