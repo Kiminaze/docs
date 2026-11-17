@@ -140,6 +140,41 @@ notification.
 
 ***
 
+## lb-phone find and valet not working
+
+<font style="color:red;">**Issue**</font>
+
+`lb-phone`'s vehicle tracking and valet functions are not always working depending on the vehicle 
+state.
+
+<font style="color:green;">**Solution**</font>
+
+Three edits need to be done to `lb-phone/server/apps/framework/garage.lua` to get this working:
+
+* Find the line `BaseCallback("garage:findCar", function(source, phoneNumber, plate)`. Add this 
+  code right after:
+    ```lua
+    if (GetResourceState("AdvancedParking") == "started") then
+        local position = exports["AdvancedParking"]:GetVehiclePosition(plate)
+        if (position) then
+            return position
+        end
+    end
+    ```
+* Find the line `if IsVehicleOut(vehicles[i].plate, allVehicles) then` inside 
+  `BaseCallback("garage:getVehicles", function(source, phoneNumber)`. Replace that line with this:
+    ```lua
+    if ((GetResourceState("AdvancedParking") == "started" and exports["AdvancedParking"]:GetVehiclePosition(vehicles[i].plate)) or IsVehicleOut(vehicles[i].plate, allVehicles)) then
+    ```
+* Find the line `if IsVehicleOut(plate) then` inside 
+  `BaseCallback("garage:valetVehicle", function(source, phoneNumber, plate, coords, heading)`. 
+  Replace that line with this:
+    ```lua
+    if ((GetResourceState("AdvancedParking") == "started" and exports["AdvancedParking"]:GetVehiclePosition(plate)) or IsVehicleOut(plate)) then
+    ```
+
+***
+
 ## GG Garage Job
 
 <font style="color:red;">**Issue**</font>
