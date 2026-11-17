@@ -16,7 +16,7 @@ you bought a package.
 view your license keys or generate a new one on the [Portal](https://portal.cfx.re/) where you 
 initially downloaded the resource in the first place.
 - Zap-Hosting servers come with a default key that is not directly associated to your account. You 
-need to generate a key and enter it inside of your server settings to be able to use keymaster 
-resources.
+need to generate a key and enter it inside of your server settings to be able to use resources 
+downloaded from the [Portal](https://portal.cfx.re/).
 - If the server is running on someone else's Cfx account, you can transfer a resource **once and 
-irreversible** to another Cfx account on the keymaster website.
+irreversibly** to another Cfx account on the [Portal](https://portal.cfx.re/).
